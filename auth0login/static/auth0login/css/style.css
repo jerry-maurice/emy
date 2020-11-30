@@ -1,0 +1,23 @@
+body{
+    background: url("../images/AdobeStock_292946768.jpeg") no-repeat center center fixed; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #000;
+}
+
+#login-page{
+    text-align: center;
+    vertical-align: center;
+    margin-top:300px;
+}
+
+#login-page h1{
+    font-size:50px;
+    font-family: cursive;
+    color:yellowgreen;
+}
