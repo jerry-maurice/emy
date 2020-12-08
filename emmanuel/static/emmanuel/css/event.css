@@ -1,0 +1,72 @@
+/*event*/
+.event-list{
+	display: flex;
+	margin-top: 50px;
+	padding: 20px 15%;
+	justify-content: center;
+}
+.event-list div{
+	padding: 20px 30px;
+}
+#event-home-page{
+	background-repeat: no-repeat;
+    background-size: cover;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+	height: 500px;
+}
+.event-welcome-tittle .message .welcome-title{
+	text-align: center;
+	padding: 40px 0 0px;
+	font-family: acme-gothic,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2.5em;
+}
+.event-welcome-tittle .message .subtitle{
+	text-align: center;
+	padding: -20 0px;
+	font-family: nautica,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2.5em;
+	color: #740000;
+}
+
+.event-welcome-tittle .message .welcome-title span{
+	font-family: nautica,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #740000;
+}
+.event-welcome-tittle .message .welcome-subtitle{
+	text-align: center;
+	padding: 40px 0 0px;
+	font-family: acme-gothic,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.7em;
+}
+.judge-style{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	padding: 20px 20%;
+}
+.video-list{
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+	justify-content: center;
+    padding:20px 15%;
+}
+.video-group video{
+	height: 150px;
+    padding: 10px;
+}
+.video-group p{
+	text-align: center;
+	font-size: 18px;
+}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'navigation/navigation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'footer/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/event.css' %}">
+{% endblock %}
+{% block header %}
+    {% include "navigation/navigation.html" %}
+{% endblock %}
+{% block content %}
+<main>
+    <div id="event-home-page" style="background-image: url('{{event.imagePage}}')">
+    </div>
+    <div class="event-welcome-tittle" id="">
+        <div class="message">
+            <p class="welcome-title">Emmanuel Maranatha <span>Youth</span></p>
+            <p class="subtitle">{{event.name}}</p>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="message" id="">
+            <p class="welcome-subtitle"></p>
+            <div class="video-list"><!--
+                {% for video in videos %}
+                <div class="video-group" id="">
+                    <video width="220" height="140" poster="{% static 'auth0login/images/emy.png" controls>
+                        <source src="{{video.url}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video_name">{{video.title}}</p>
+                </div>
+                {% endfor %}-->
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+{% block footer %}
+    {% include "footer/footer.html" %}
+{% endblock %}

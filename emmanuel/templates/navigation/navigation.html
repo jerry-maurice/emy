@@ -1,0 +1,15 @@
+{% load static %}
+<header>
+    <img class="log" src="{% static 'auth0login/images/emy.png' %}" alt="logo" height="50">
+    <nav>
+        <ul class="nav_links">
+            <li><a href="{% url 'home' %}">About</a></li>
+            <li><a href="{% url 'event' %}">Events</a></li>
+            <li><a href="">Contact</a></li>
+            {% if user.is_staff%}
+            <li><a href="">Judge</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <a class="cta" href="{% url 'logout' %}"><button>Logout</button></a>
+</header>

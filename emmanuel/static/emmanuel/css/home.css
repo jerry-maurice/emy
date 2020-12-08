@@ -1,0 +1,100 @@
+@import url("https://use.typekit.net/xwb7lcz.css");
+
+#home-page{
+	background-image:url("/static/auth0login/images/AdobeStock_377773665.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+      -o-background-size: cover;
+    width: 100%;
+    height:500px;
+}
+
+#about .message .welcome-title{
+	text-align: center;
+	padding: 40px 0 0px;
+	font-family: acme-gothic,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2.5em;
+}
+#about .message .welcome-title span{
+	font-family: nautica,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #740000;
+}
+#about .message .about-text{
+	font-family: alana-smooth, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 30px;
+	text-align: center;
+	width: 900px;
+	margin: 0 auto;
+	padding: 10px;
+}
+.underline{
+	border-bottom: 3px solid #3B0000;
+	width: 500px;
+	margin: 0 auto;
+}
+#about .message .welcome-subtitle{
+	text-align: center;
+	padding: 40px 0 0px;
+	font-family: acme-gothic,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.7em;
+}
+.committee-style{
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: 200px 200px;
+	justify-items: center;
+    padding:30px 15%;
+}
+.committe-img img{
+	height: 150px;
+	padding: 10px;
+}
+.committe-img p{
+	text-align: center;
+	font-size: 18px;
+}
+#message-image{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding:100px 15%;
+	background-color: #A2DADE;
+}
+#message-image img{
+	height: 250px;
+	box-shadow: 0 8px 6px -6px black;
+}
+#founder-quote{
+	height: 500px;
+}
+#founder-quote img{
+	display: block;
+	margin: 0 auto;
+	height: 200px;
+	padding: 25px 10px 5px;
+}
+#founder-quote .name{
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+}
+#founder-quote .quote{
+	text-align: center;
+	font-family: alana-smooth, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 25px;
+	padding: 10px 15% 30px;
+}

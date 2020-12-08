@@ -6,7 +6,7 @@ from django.conf import settings
 from django.http import HttpResponseRedirect
 from urllib.parse import urlencode
 
-from contest.views import home
+from emmanuel.views import home
 
 # Create your views here.
 

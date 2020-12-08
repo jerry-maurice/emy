@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'navigation/navigation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'footer/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/home.css' %}">
+{% endblock %}
+{% block header %}
+    {% include "navigation/navigation.html" %}
+{% endblock %}
+{% block content %}
+<main>
+    <div id="home-page">
+    </div>
+    <div id="about">
+        <div class="message">
+            <p class="welcome-title">Emmanuel Maranatha <span>Youth</span></p>
+            <p class="about-text">
+                Emmanuel Maranatha Youth, <abbr title="Emmanuel Maranatha Youth">"EMY"</abbr>, is a prayer group whose goal is to raise up a legacy of young people who has the capacity to learn, to follow the Word of God and to be empowered by the Holy Spirt who will help them understand and recognize who Jesus is. He will also help them fulfill the real purpose of their calling.<br />
+                Our objective is to respond to the Social and Spiritual needs of the youth by providing relative programs, activities, and events that will allow them to build a strong foundation of faith that will enable them to express and share their faith and to use their talent in order to grow as children of God
+            </p>
+            <div class="underline"></div>
+        </div>
+        <div class="message" id="">
+            <p class="welcome-subtitle">Meet our committee members</p>
+            <div class="committee-style">
+                {% for member in committee %}
+                    <div class="committe-img">
+                        {% if member.image %}
+                            <img src="{{member.image}}" alt="{{member.user.first_name}} {{member.user.last_name}}">
+                        {% else %}
+                            <img src="{% static 'auth0login/images/Unknown_icon.png'%}" alt="profile image">
+                        {% endif %}
+                        <p>{{member.firstName}} {{member.lastName}} </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div id="message-image">
+        <img src="{% static 'auth0login/images/AdobeStock_335114620.jpeg' %}" alt="">
+        <img src="{% static 'auth0login/images/AdobeStock_136081937.jpeg' %}" alt="">
+        <img src="{% static 'auth0login/images/AdobeStock_212273093.jpeg' %}" alt="">
+    </div>
+    <div class="" id="founder-quote">
+        <img src="{% static 'auth0login/images/Unknown_icon.png' %}" alt="">
+        <p class="name">Mona Denis</p>
+        <p class="quote">Le monde ayant une grande carence en amour, nous devons, comme le Maitre nous le demande, nous aimer les uns,les autres. Nous aimer tellement que cet amour se communique, se repande, se propage et envahisse le monde entier. Car Dieu est Amour. Que Dieu ou Amour puisse gagner, avoir, posseder et occuper tous les coeurs. Place à l’Amour dans notre année de l’Amour. Aimons nos ennemis, nos amis, nos parents, nos familles elargies ou restreintes, nos enfants, notre conjoint, nos patrons, nos collegues, notre pays, nos concitoyens, nos voisins en un seul mot:nos prochains comme nous-mêmes. Nous le pouvons bien-aimés, car Celui qui nous a appelés est Fidèle, et c’est Lui qui le fera. Que l’Amour triomphe et règne. Continuons d’intercéder, c’est une noble tâche, c’est notre boulot. Mettons donc toute notre confiance en l’Eternel des Armees,faisons de Lui nos délices et nous verrons sa gloire. Ainsi, à vous tous je renouvelle mon indéfectible attachement et vous dis: Bonne, heureuse et fructueuse Année 2020. L’Amour vous aime et je vous aime aussi. Bénédictions et amour toujours.Sr Mona </p>
+    </div>
+</main>
+{% endblock %}
+{% block footer %}
+    {% include "footer/footer.html" %}
+{% endblock %}

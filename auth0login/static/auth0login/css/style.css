@@ -21,3 +21,16 @@ body{
     font-family: cursive;
     color:yellowgreen;
 }
+.btn-login{
+    padding: 25px;
+    color: white;
+    border: 2px solid white;
+	border-radius: 50px;
+    cursor: pointer;
+    text-decoration:none;
+    background-color: black;
+}
+.btn-login:hover{
+	background-color: #3B0000;
+	color: #FFFFFF;
+}

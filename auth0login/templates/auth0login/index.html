@@ -7,13 +7,13 @@
     <main>
         <div id="login-page" class="container">
             <h1 id="countdown-message"></h1>
-            <a class="btn btn-outline-success btn-lg" href="/login/auth0">Log In</a>
+            <a class="btn-login" href="/login/auth0">Log In</a>
         </div>
     </main>
 {% endblock %}
 {% block js %}
     <script>
-        const countdown = new Date("Dec 5, 2020 19:00:00").getTime();
+        const countdown = new Date("Dec 12, 2020 19:00:00").getTime();
         let message = document.getElementById('countdown-message');
 
         //update every second
