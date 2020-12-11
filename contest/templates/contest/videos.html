@@ -90,7 +90,7 @@
             <div class="video-list">
                 {% for video in videos %}
                 <div class="video-group" id="">
-                    <video width="220" height="140" poster="{% static 'auth0login/images/emy.png" controls>
+                    <video width="220" height="140" poster="{% static 'auth0login/images/emy.png' %}" controls>
                         <source src="{{video.url}}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
