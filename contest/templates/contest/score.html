@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'navigation/navigation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'footer/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/event.css' %}">
+{% endblock %}
+{% block header %}
+    {% include "navigation/navigation.html" %}
+{% endblock %}
+{% block content %}
+<main>
+    <div id="event-home-page" style="background-image: url('http://d12hv3htzmbj6t.cloudfront.net/emy_event/AdobeStock_392053728.jpeg')">
+    </div>
+    <div class="event-welcome-tittle" id="">
+        <div class="message">
+            <p class="welcome-title">Emmanuel Maranatha <span>Youth</span></p>
+            <p class="subtitle">First Annual Emmanuel Maranatha Christmas Singing Competion</p>
+            <div class="underline"></div>
+        </div>
+        <div class="message" id="">
+            <p class="welcome-subtitle">Score</p>
+            <div class="video-rating">
+                <div class="" id="">
+                    <video width="320" height="320" poster="{% static 'auth0login/images/emy.png" controls>
+                        <source src="{{video.url}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div>
+                    <form action="{% url 'score' video.id %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>Performance</label>
+                            <input required type="number" name="performance" class="" id="" min="1" max="10">
+                        </div>
+                        <div class="form-group">
+                            <label>Presentation</label>
+                            <input required type="number" name="presentation" class="" id="" min="1" max="10">
+                        </div>
+                        <div class="form-group">
+                            <label>Choice</label>
+                            <input required type="number" name="choice" class="" id="" min="1" max="10">
+                        </div>
+                        <div class="form-group">
+                            <label>Confidence</label>
+                            <input required type="number" name="confidence" class="" id="" min="1" max="10">
+                        </div>
+                        <div class="form-group">
+                            <label>Presented on time</label>
+                            <input required type="number" name="ontime" class="" id="" min="1" max="10">
+                        </div>
+                        <div class="form-group">
+                            <label>Additional Comment</label>
+                            <textarea name="comment"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="" class="" id="">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <p class="message-alert">{{message}}</p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+{% block footer %}
+    {% include "footer/footer.html" %}
+{% endblock %}
