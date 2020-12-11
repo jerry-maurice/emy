@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
+env = environ.Env(
+    DEBUG=(bool,  False)
+)
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -21,12 +27,12 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fj_%a4din1bph46+!s$s-ts@%ik5p)lvr(l-r$gk%lm3d$f)!0'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'contest',
-    'auth0login'
+    'auth0login',
+    'emmanuel',
 ]
 
 MIDDLEWARE = [
@@ -77,13 +84,22 @@ WSGI_APPLICATION = 'emy.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}'''
+DATABASES = {
+    'default': {
+        'ENGINE': env('ENGINE'),
+        'NAME': env('DB_NAME'),
+        'HOST':env('DATABASE_URL'),
+        'PORT':env('DB_PORT'),
+        'USER':env('DB_USERNAME'),
+        'PASSWORD':env('DB_PASSWORD'),
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -109,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'US/Eastern'
 
 USE_I18N = True
 
@@ -122,19 +138,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-'''
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')'''
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 
 SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
-SOCIAL_AUTH_AUTH0_DOMAIN = ''
-SOCIAL_AUTH_AUTH0_KEY = ''
-SOCIAL_AUTH_AUTH0_SECRET = ''
+SOCIAL_AUTH_AUTH0_DOMAIN = 'dev-kei291nr.auth0.com'
+SOCIAL_AUTH_AUTH0_KEY = 'P6R3o0DNzPEx2HpNi6ksjtCUKpW73CkG'
+SOCIAL_AUTH_AUTH0_SECRET = 'tLFw7dhT6Pt0Lk6UsKFLrxuQ2JsGUnhW9SQTD-JDd0V6lCqMJV7eh_iPqfz8jXt3'
 
 
 SOCIAL_AUTH_AUTH0_SCOPE = [
@@ -151,4 +167,4 @@ AUTHENTICATION_BACKENDS = {
 
 
 LOGIN_URL = '/login/auth0'
-LOGIN_REDIRECT_URL = '/home'
+LOGOUT_REDIRECT_URL = '/about'

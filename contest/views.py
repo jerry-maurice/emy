@@ -7,17 +7,29 @@ from django.http import HttpResponseRedirect
 from contest.models import Videolibrary, Rating, Like
 
 # Create your views here.
-@login_required
-def home(request):
-    user = request.user
-    videos = Videolibrary.objects.all().filter(roundNumber=1)
-    context = {
-        'videos':videos
-    }
-    return render(request, 'contest/home.html',context)
+@staff_member_required
+def round(request):
+    '''
+    display contest round
+    '''
+    if request.method == 'GET':
+        return render(request, 'contest/round.html')
 
 
-#@staff_member_required
+@staff_member_required
+def videosContest(request, round_id):
+    '''
+    list of videos for the round selected
+    '''
+    if request.method == 'GET':
+        videos = Videolibrary.objects.all().filter(roundNumber=round_id)
+        context = {
+            'videos':videos,
+        }
+        return render(request, 'contest/videos.html', context)
+
+
+@staff_member_required
 def score(request, video_id):
     video = get_object_or_404(Videolibrary, pk=video_id)
     user = request.user
@@ -32,10 +44,11 @@ def score(request, video_id):
         ontime = request.POST['ontime']
         presentation = request.POST['presentation']
         confidence = request.POST['confidence']
-        rate = Rating(performance=performance, choice=choice, ontime=ontime, presentation=presentation, confidence=confidence, judge=user,video=video)
+        comment = request.POST['comment']
+        rate = Rating(performance=performance, choice=choice, ontime=ontime, presentation=presentation, confidence=confidence, judge=user,video=video, comment=comment)
         if Rating.objects.filter(judge=user,video=video).exists() == False:
             rate.save()
-            return redirect(home)
+            return redirect(round)
         else:
             message = "You already gave this video a score. Please contact support if you want to modify your score"
             context={
@@ -43,4 +56,5 @@ def score(request, video_id):
                 'video':video
             }
             return render(request, 'contest/score.html', context)
+
 

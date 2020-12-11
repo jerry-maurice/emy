@@ -32,6 +32,7 @@ class Rating(models.Model):
     video = models.ForeignKey(Videolibrary, on_delete=models.CASCADE, related_name='video_rating')
     judge = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_rating')
     added = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    comment = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.judge.first_name

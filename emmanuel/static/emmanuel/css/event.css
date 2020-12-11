@@ -70,3 +70,38 @@
 	text-align: center;
 	font-size: 18px;
 }
+/*round*/
+.poster-title p{
+	text-align: center;
+	font-size:20px;
+	color: #740000;
+	text-transform: uppercase;
+}
+/*video*/
+.video-rating{
+	padding: 20px;
+	display:flex;
+	flex-direction:row;
+	justify-content: center;
+}
+.form-group label{
+	padding: 10px;
+	font-size:20px;
+	display:block;
+}
+.form-group input{
+	width:400px;
+	height:30px;
+	padding:10px;
+	color:black;
+	font-size:20px;
+}
+.form-group textarea{
+	width:400px;
+	height:100px;
+}
+.message-alert{
+	text-align:center;
+	color:#740000;
+	font-size:20px;
+}

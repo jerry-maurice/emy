@@ -7,7 +7,7 @@
             <li><a href="{% url 'event' %}">Events</a></li>
             <li><a href="">Contact</a></li>
             {% if user.is_staff%}
-            <li><a href="">Judge</a></li>
+            <li><a href="{% url 'round' %}">Judge</a></li>
             {% endif %}
         </ul>
     </nav>
