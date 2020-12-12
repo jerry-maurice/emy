@@ -51,10 +51,32 @@
 .committee-style{
 	display: grid;
 	grid-gap: 5px;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(1, 1fr);
 	grid-template-rows: 200px 200px;
 	justify-items: center;
-    padding:30px 15%;
+	padding:30px 15%;
+}
+/*medium screen*/
+@media (min-width:600px) and (max-width:900px){
+	.committee-style{
+		display: grid;
+		grid-gap: 5px;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 200px 200px;
+		justify-items: center;
+		padding:30px 15%;
+	}
+}
+/*large screen*/
+@media (min-width:901px){
+	.committee-style{
+		display: grid;
+		grid-gap: 5px;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: 200px 200px;
+		justify-items: center;
+		padding:30px 15%;
+	}
 }
 .committe-img img{
 	height: 150px;
@@ -66,7 +88,7 @@
 }
 #message-image{
 	display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding:100px 15%;
@@ -74,10 +96,27 @@
 }
 #message-image img{
 	height: 250px;
+	padding: 10px;
 	box-shadow: 0 8px 6px -6px black;
 }
-#founder-quote{
-	height: 500px;
+/*medium screen*/
+@media (min-width:600px) and (max-width:900px){
+	#founder-quote{
+		height: 800px;
+	}
+}
+@media (min-width:901px){
+	#founder-quote{
+		height: 500px;
+	}
+	#message-image{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding:100px 15%;
+		background-color: #A2DADE;
+	}
 }
 #founder-quote img{
 	display: block;
