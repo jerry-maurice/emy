@@ -1,0 +1,19 @@
+{% load filters %}
+<div class="card">
+  <div class="card-header-tweet">
+    <p><a href="/user/{{ tweet.user.username }}">{{ tweet.author.username }}</a></p>
+    <p class="time-font">{{ tweet.created_at|time_difference }}</p>
+  </div>
+  <div class="card-body-tweet">
+    {% autoescape off %}
+    <div>
+      {{ tweet.text }}
+    </div>
+    <div>
+      {% if tweet.image %}
+        <img src="{{tweet.image.url}}" alt="post">
+      {% endif %}
+    </div>
+    {% endautoescape %}
+  </div>
+</div>

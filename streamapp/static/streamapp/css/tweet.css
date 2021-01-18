@@ -1,0 +1,44 @@
+@import url("https://use.typekit.net/xwb7lcz.css");
+
+
+.card .card-header-tweet{
+	text-align: center;
+	padding: 15px 5px;
+	font-family: acme-gothic,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+    font-size: 14px;
+    border-bottom: 1px solid #740000;
+}
+.card .card-header-tweet{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+.card .card-header-tweet p{
+    padding: 5px;
+}
+.time-font{
+    font-style: italic;
+    border-left: 1px solid #740000;
+}
+.card .card-body-tweet{
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+.card .card-body-tweet div{
+    padding: 15px;
+}
+.card .card-body-tweet div img{
+    width:400px;
+    display: block;
+    text-align: center;
+}
+.card .card-body-tweet div{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:16px;
+}
