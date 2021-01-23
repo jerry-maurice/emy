@@ -50,3 +50,12 @@ button:hover{
 	background-color: #3B0000;
 	color: #FFFFFF;
 }
+.vertical-navigation{
+	display:flex;
+	flex-direction:column;
+}
+.vertical-navigation li{
+	text-decoration:none;
+	list-style:none;
+	padding:5px 20px;
+}

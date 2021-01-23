@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% load activity_tags %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'navigation/navigation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'footer/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/form.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'streamapp/css/tweet.css' %}">
+{% endblock %}
+{% block header %}
+    {% include "navigation/navigation.html" %}
+{% endblock %}
+{% block content %}
+<main>
+    <div class="user-page">
+        <div class="header_section" data-parallax="scroll" data-image-src="{% static 'auth0login/images/AdobeStock_292184019.jpeg' %}">
+        </div>
+        <div class="body_section">
+            <div class="shortcut_section">
+                <div class="">
+                    <a href="{% url 'user-profile' %}">
+                        {% if member %}
+                        <img id="profile-image" src="" alt="profile image" height=500>
+                        {% else %}
+                        <img id="profile-image" src="{% static 'auth0login/images/emy.png' %}" alt="profile image" height=500 width=250>
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="card">
+                    {% include "navigation/vertical_navigation.html" %}
+                </div>
+            </div>
+            <div class="detail_section">
+                <div class="card">
+                    <div class="card-header">
+                        Profile
+                    </div>
+                    <div class="card-body">
+                        <form action="{% url 'new-profile' %}" method="post" class="form" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group file_group">
+                                <label for="profile_picture">Profile Picture</label>
+                                <input accept="image/x-png,image/gif,image/jpeg" required type="file" name="profile_picture" class="form-input" id="profile_picture">
+                            </div>
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input required type="date" name="profile_dob" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>About</label>
+                                <textarea required name="profile_about" class="form-textarea" placeholder="Tell me about you"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="notification_section">
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+{% block footer %}
+    {% include "footer/footer.html" %}
+{% endblock %}
+{% block js%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+{% endblock %}

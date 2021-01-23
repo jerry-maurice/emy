@@ -7,6 +7,7 @@ event
 	margin-top: 50px;
 	padding: 20px 15%;
 	justify-content: center;
+    align-items: center;
 }
 /*medium screen*/
 @media (min-width:600px) and (max-width:900px){
@@ -143,4 +144,38 @@ event
 	text-align:center;
 	color:#740000;
 	font-size:20px;
+}
+
+.schedule{
+	display: block;
+	margin:0 auto;
+	width: 900px;
+}
+.table{
+	width:900px;
+}
+.table-header{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	align-content: center;
+	justify-content:center;
+	background-color:#740000;
+	color: #ccc;
+}
+.table-header h4{
+	padding: 10px 30px;
+	font-size:18px;
+}
+.table-body{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+}
+.table-body p{
+	font-size:16px;
+	padding: 5px 20px;
+}
+.table-body:hover {
+	background-color:rgb(255, 176, 176);
 }

@@ -4,19 +4,20 @@
     <link rel="stylesheet" type="text/css" href="{% static 'navigation/navigation.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'footer/footer.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/home.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/event.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'notification/css/notification.css' %}">
 {% endblock %}
 {% block header %}
     {% include "navigation/navigation.html" %}
 {% endblock %}
 {% block content %}
 <main>
-    <div class="event-list">
-    {% for event in events %}
-        <div>
-            <a href="{% url 'event_detail' event.id %}"><img src="{{event.imagePoster}}" alt="{{event.name}}" height="300"></a>
+    <div class="card ">
+        <div class="card-header">
+            {{notification.title}}
         </div>
-    {% endfor %}
+        <div class="card-body detail">
+            {{notification.message}}
+        </div>
     </div>
 </main>
 {% endblock %}

@@ -3,9 +3,11 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 import json
 from django.http import HttpResponseRedirect
-from event.models import Event
+from event.models import Event, Agenda
 from contest.models import Videolibrary
+from django.db.models import Q
 import logging
+from datetime import date, datetime
 
 # Create your views here.
 @login_required
@@ -34,7 +36,9 @@ def events_detail(request,event_id):
         }
         return render(request,'emmanuel/christmas_contest.html',context)
     elif event.occurence == 'W':
+        agenda = Agenda.objects.filter(Q(event=event) & Q(date__gte=date.today()))
         context = {
             'event':event,
+            'agenda':agenda,
         }
         return render(request,'emmanuel/event_detail.html',context)

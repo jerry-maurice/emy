@@ -1,0 +1,168 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'navigation/navigation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'footer/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/event.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/form.css' %}">
+{% endblock %}
+{% block header %}
+    {% include "navigation/navigation.html" %}
+{% endblock %}
+{% block content %}
+<main>
+    <div id="home-page" data-parallax="scroll" data-image-src="{% static 'auth0login/images/AdobeStock_299972483.jpeg' %}">
+    </div>
+    <div id="about">
+        <div class="message">
+            <p class="welcome-title">Emmanuel Maranatha <span>Youth</span></p>
+            <p class="about-text">
+                Emmanuel Maranatha Youth, <abbr title="Emmanuel Maranatha Youth">"EMY"</abbr>, is a prayer group whose goal is to raise up a legacy of young people who has the capacity to learn, to follow the Word of God and to be empowered by the Holy Spirt who will help them understand and recognize who Jesus is. He will also help them fulfill the real purpose of their calling.<br />
+                Our objective is to respond to the Social and Spiritual needs of the youth by providing relative programs, activities, and events that will allow them to build a strong foundation of faith that will enable them to express and share their faith and to use their talent in order to grow as children of God
+            </p>
+        </div>
+        <div id="verse_Jeremiah" data-parallax="scroll" data-image-src="{% static 'auth0login/images/AdobeStock_330540265.jpeg' %}">
+            <p>"For I know the plans that I have for you," deeclares the Lord, "plans to prosper you and not to harm you, plans to give you hope and a future."</p>    
+        </div>
+    </div>
+    <div id="committee">
+        <div class="message" id="">
+            <p class="welcome-subtitle">Our committee</p>
+            <div class="committee-style">
+                <div class="committe-img">
+                    <img src="{% static 'auth0login/images/Unknown_icon.png'%}" alt="profile image">
+                    <p class="committe-name">Natacha Mongeois</p>
+                    <p class="committe-subtitle">President</p>
+                </div>
+                <div class="committe-img">
+                    <img src="{% static 'auth0login/images/Unknown_icon.png'%}" alt="profile image">
+                    <p class="committe-name">Itany Pierre</p>
+                    <p class="committe-subtitle">Vice-President</p>
+                </div>
+                <div class="committe-img">
+                    <img src="{% static 'auth0login/images/Unknown_icon.png'%}" alt="profile image">
+                    <p class="committe-name">Magguy Dayan</p>
+                    <p class="committe-subtitle">Treasurer</p>
+                </div>
+                <div class="committe-img">
+                    <img src="{% static 'auth0login/images/Unknown_icon.png'%}" alt="profile image">
+                    <p class="committe-name">Rebecca St. Felix</p>
+                    <p class="committe-subtitle">Secretary</p>
+                </div>
+                <div class="committe-img">
+                    <img src="{% static 'auth0login/images/Unknown_icon.png'%}" alt="profile image">
+                    <p class="committe-name">Claire Dayan</p>
+                    <p class="committe-subtitle">Secretary Adjoint</p>
+                </div>
+                <div class="committe-img">
+                    <img src="{% static 'auth0login/images/Unknown_icon.png'%}" alt="profile image">
+                    <p class="committe-name">Jerry Maurice</p>
+                    <p class="committe-subtitle">Spokeperson</p>
+                </div>
+                <div class="committe-img">
+                    <img src="{% static 'auth0login/images/Unknown_icon.png'%}" alt="profile image">
+                    <p class="committe-name">Jonathan Maurice</p>
+                    <p class="committe-subtitle">Spokeperson Adjoint</p>
+                </div>
+                <div class="committe-img">
+                    <img src="{% static 'auth0login/images/Unknown_icon.png'%}" alt="profile image">
+                    <p class="committe-name">Velouse Laguerre</p>
+                    <p class="committe-subtitle"></p>
+                </div>
+                <div class="committe-img">
+                    <img src="{% static 'auth0login/images/Unknown_icon.png'%}" alt="profile image">
+                    <p class="committe-name">David Eujene</p>
+                    <p class="committe-subtitle"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="founder-quote">
+        <img src="{% static 'auth0login/images/Unknown_icon.png' %}" alt="">
+        <p class="name">Mona Denis</p>
+        <p class="quote">Le monde ayant une grande carence en amour, nous devons, comme le Maitre nous le demande, nous aimer les uns,les autres. Nous aimer tellement que cet amour se communique, se repande, se propage et envahisse le monde entier. Car Dieu est Amour. Que Dieu ou Amour puisse gagner, avoir, posseder et occuper tous les coeurs. Place à l’Amour dans notre année de l’Amour. Aimons nos ennemis, nos amis, nos parents, nos familles elargies ou restreintes, nos enfants, notre conjoint, nos patrons, nos collegues, notre pays, nos concitoyens, nos voisins en un seul mot:nos prochains comme nous-mêmes. Nous le pouvons bien-aimés, car Celui qui nous a appelés est Fidèle, et c’est Lui qui le fera. Que l’Amour triomphe et règne. Continuons d’intercéder, c’est une noble tâche, c’est notre boulot. Mettons donc toute notre confiance en l’Eternel des Armees,faisons de Lui nos délices et nous verrons sa gloire. Ainsi, à vous tous je renouvelle mon indéfectible attachement et vous dis: Bonne, heureuse et fructueuse Année 2020. L’Amour vous aime et je vous aime aussi. Bénédictions et amour toujours.Sr Mona </p>
+    </div>
+    <div class="founder-quote">
+        <img src="{% static 'auth0login/images/Unknown_icon.png' %}" alt="">
+        <p class="name">Gaston Maurice</p>
+        <p class="quote">Chers intercesseurs & membres de E.M
+                Salutations dans le nom Puissant de Jésus !
+                Nous voulons vous remercier pour
+                votre soutien sans relâche depuis 6 ans.
+                Vos prières et mots d’encouragement,
+                votre temps, votre contribution monétaire,
+                votre acte d’amour quand nous en avions
+                le plus besoin et votre régularité ont été
+                sans mesure. Nous avons vécu des moments très difficiles, mais vous êtes
+                restés fidèles. MERCI ! Nous sommes
+                également reconnaissants pour la grâce,
+                la compassion et la fidélité de Dieu
+                envers nous. Se sa ki fè ke “nous tenons
+                fermes et restons debout !” Dieu a prouvé tout au long de ces
+                jours qu’il est vraiment avec nous.
+                Aujourd’hui, nous sommes reconnaissants
+                que depuis 6 ans DIEU NOUS
+                A GARDES! Et nous pouvons crier «
+                Eben Ezer , jusqu’ici l’Eternel nous a
+                secourus» Donc, avec beaucoup de zèle,
+                nous célébrons le Dieu tout-puissant
+                pour ses actes puissants!!! Je prie pour
+                que le Seigneur continue à vous bénir et
+                que sa grâce continue d’être au-dessus de
+                vous.
+                Merci encore pour votre amour et le
+                soutien continus.
+                Jésus vous aime et Je vous aime aussi.
+                Fr Maurice</p>
+    </div>
+    <div id="message-image">
+        <img src="{% static 'auth0login/images/AdobeStock_335114620.jpeg' %}" alt="">
+        <img src="{% static 'auth0login/images/AdobeStock_136081937.jpeg' %}" alt="">
+        <img src="{% static 'auth0login/images/AdobeStock_212273093.jpeg' %}" alt="">
+    </div>
+    <div id="events" data-parallax="scroll" data-image-src="{% static 'auth0login/images/AdobeStock_392771822.jpeg' %}">
+        <div class="message" id="">
+            <p class="welcome-subtitle">Our Events</p>
+        </div>
+        <div class="event-list">
+            {% for event in events %}
+                <div>
+                    <a href="{% url 'event_detail' event.id %}"><img src="{{event.imagePoster}}" alt="{{event.name}}" height="300"></a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="contact">
+        <div class="message" id="">
+            <p class="welcome-subtitle">Contact Us</p>
+        </div>
+        <div>
+            <form class="contact-form">
+                <div>
+                    <label>Name</label>
+                    <input type="email" name="email">
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="email" name="email">
+                </div>
+                <div>
+                    <label>Message</label>
+                    <textarea></textarea>
+                </div>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
+{% block footer %}
+    {% include "footer/footer.html" %}
+{% endblock %}
+{% block js%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+{% endblock %}

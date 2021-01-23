@@ -1,0 +1,23 @@
+{% load filters %}
+{% load static %}
+<div class="card">
+    <div class="card-header">
+        Recent Notification
+    </div>
+    <div class="card-body">
+        <div class="announcement">
+            {% for n in notifications %}
+                <p class="announcement-header">
+                    {{n.created|time_difference }}
+                </p>
+                <p class="announcement-body">
+                    {{n.message}}
+                    {% if n.message %}
+                    <a href="{% url 'notification-detail' n.id %}">...more</a>
+                    {% endif %}
+                </p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+               

@@ -21,26 +21,27 @@
             <div class="shortcut_section">
                 <div class="">
                     <a href="{% url 'user-profile' %}"><img id="profile-image" src="{{member.image.url}}" alt="profile image" height=500></a>
+                    
+                </div>
+                <div class="card">
+                    {% if follow %}
+                        <p><a href="{% url 'unfollow' member.user.id %}">click here to unfollow user</a></p>
+                    {% else %}
+                        <p><a href="{% url 'follow' member.user.id %}">click here to follow user</a></p>
+                    {% endif %}
                 </div>
                 <div class="card">
                     {% include "navigation/vertical_navigation.html" %}
                 </div>
             </div>
             <div class="detail_section">
-                <div class="card" id="feed_post">
-                    <form id="post-form" method="POST" action="{% url 'user-home' %}" enctype="multipart/form-data" >
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <textarea name="postFeed" id="" class="post-input" placeholder="Share something with us"></textarea>
-                        </div>
-                        <div class="form-group" id="postImageGroup">
-                            <label for="postFeedImage"><img src="https://img.icons8.com/fluent/48/000000/add-image.png"/></label>
-                            <input type="file" name="postFeedImage" id="postFeedImage" class="post-file">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="">Share</button>
-                        </div>
-                    </form>
+                <div class="card">
+                    <div class="card-header">
+                        {{member.user.first_name}} {{member.user.last_name}}
+                    </div>
+                    <div class="card-body">
+                        <p>{{member.about}}</p>
+                    </div>
                 </div>
                 <div class="">
                     {% for activity in activities %}

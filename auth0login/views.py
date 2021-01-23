@@ -6,18 +6,24 @@ from django.conf import settings
 from django.http import HttpResponseRedirect
 from urllib.parse import urlencode
 
-from emmanuel.views import home
+from emmanuel.views import home, user_home
+from event.models import Event, Agenda
+
 
 # Create your views here.
 
 def index(request):
     user = request.user
     if user.is_authenticated:
-        return redirect(home)
+        return redirect(user_home)
     else:
-        return render(request, 'auth0login/index.html')
+        events = Event.objects.all().filter(isActive=True)
+        context = {
+            'events':events,
+        }
+        return render(request, 'emmanuel/index.html', context)
 
-
+'''
 
 @login_required
 def dashboard(request):
@@ -30,7 +36,7 @@ def dashboard(request):
         'email': auth0user.extra_data['email'],
     }
     return redirect(home)
-'''
+
     return render(request, 'auth0login/dashboard.html', {
         'auth0User': auth0user,
         'userdata': json.dumps(userdata, indent=4)

@@ -10,6 +10,7 @@ EVENT_OCCURENCES = {
     ('D',"Daily"),
     ('M',"Monthly"),
     ('Y',"Yearly"),
+    ('O',"Once"),
 }
 class Event(models.Model):
     name = models.CharField(max_length=250, null=True, blank=True)
@@ -33,3 +34,15 @@ class Event_Participant(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     participant = models.ForeignKey(Member, on_delete=models.CASCADE)
     is_paid = models.BooleanField(default=False)
+
+
+class Agenda(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    worshipLeader = models.CharField(max_length=500, null=True)
+    scripture = models.CharField(max_length=500, null=True)
+    reader = models.CharField(max_length=500, null=True)
+    preacher = models.CharField(max_length=500, null=True)
+    date = models.DateField(null=True)
+
+    def __str__(self):
+        return self.worshipLeader

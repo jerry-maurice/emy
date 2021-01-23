@@ -21,17 +21,24 @@
         </div>
         
         <div class="message" id="">
-            <p class="welcome-subtitle"></p>
-            <div class="video-list"><!--
-                {% for video in videos %}
-                <div class="video-group" id="">
-                    <video width="220" height="140" poster="{% static 'auth0login/images/emy.png" controls>
-                        <source src="{{video.url}}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p class="video_name">{{video.title}}</p>
+            <p class="about-text">{{event.about}}</p>
+            <div class="schedule">
+                <div class="table">
+                    <div class="table-header">
+                        <h4>Date</h4>
+                        <h4>Worship Leader</h4>
+                        <h4>Scripture Reading</h4>
+                        <h4>Preacher</h4>
+                    </div>
+                    {% for a in agenda %}
+                    <div class="table-body card">
+                        <p>{{a.date}}</p>
+                        <p>{{a.worshipLeader}}</p>
+                        <p>{{a.scripture}}/{{a.reader}}</p>
+                        <p>{{a.preacher}}</p>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}-->
             </div>
         </div>
     </div>

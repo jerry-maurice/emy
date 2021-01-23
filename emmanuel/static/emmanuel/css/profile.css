@@ -1,0 +1,36 @@
+@import url("https://use.typekit.net/xwb7lcz.css");
+
+.header_section{
+    background-repeat: no-repeat;
+    background-size: cover;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+      -o-background-size: cover;
+    width: 100%;
+    height:400px;
+}
+#profile-image{
+    height:200px;
+    margin:-100px 50px 0px;
+    padding:20px;
+    background-color:#fff;
+}
+.body_section{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-content: center;
+    width: 1400px;
+}
+.shortcut_section{
+    width: 350px;
+}
+.notification_section{
+    width: 350px;
+}
+.detail_section{
+    width: 600px;
+}
+body{
+    background-color: rgb(252, 240, 240);
+}

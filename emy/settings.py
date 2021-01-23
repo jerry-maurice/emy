@@ -48,6 +48,12 @@ INSTALLED_APPS = [
     'contest',
     'auth0login',
     'emmanuel',
+    'account',
+    'event',
+    'stream_django',
+    'streamapp',
+    'storages',
+    'notification'
 ]
 
 MIDDLEWARE = [
@@ -165,6 +171,61 @@ AUTHENTICATION_BACKENDS = {
     'django.contrib.auth.backends.ModelBackend'
 }
 
+'''
+logging
+'''
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'WARNING',
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': False,
+        },
+    },
+}
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+SESSION_COOKIE_AGE = 1800 
+SESSION_SAVE_EVERY_REQUEST = True
+
 
 LOGIN_URL = '/login/auth0'
-LOGOUT_REDIRECT_URL = '/about'
+LOGIN_REDIRECT_URL = '/profile'
+
+EMAIL_BACKEND = 'django_ses.SESBackend'
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+
+# These are optional -- if they're set as environment variables they won't
+# need to be set here as well
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+
+# Additionally, if you are not using the default AWS region of us-east-1,
+# you need to specify a region, like so:
+AWS_SES_REGION_NAME = env('AWS_SES_REGION_NAME')
+AWS_SES_REGION_ENDPOINT = env('AWS_SES_REGION_ENDPOINT')
+
+DEFAULT_FILE_STORAGE = env('DEFAULT_FILE_STORAGE')
+AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = env('AWS_S3_REGION_NAME')
+
+# stream settings
+STREAM_API_KEY = env('STREAM_API_KEY')
+STREAM_API_SECRET = env('STREAM_API_SECRET')
+STREAM_NEWS_FEEDS = dict(timeline='timeline',notification='notification')

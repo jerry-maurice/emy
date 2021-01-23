@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% load activity_tags %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'navigation/navigation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'footer/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/form.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'streamapp/css/tweet.css' %}">
+{% endblock %}
+{% block header %}
+    {% include "navigation/navigation.html" %}
+{% endblock %}
+{% block content %}
+<main>
+    <div class="user-page">
+        <div class="header_section" data-parallax="scroll" data-image-src="{% static 'auth0login/images/AdobeStock_292184019.jpeg' %}">
+        </div>
+        <div class="body_section">
+            <div class="shortcut_section">
+                <div class="">
+                    <a href="{% url 'user-profile' %}"><img id="profile-image" src="{{member.image.url}}" alt="profile image" height=500></a>
+                </div>
+                <div class="card">
+                    {% include "navigation/vertical_navigation.html" %}
+                </div>
+            </div>
+            <div class="detail_section">
+                <div class="card">
+                    <div class="card-header">
+                        Members of Emmanuel Maranatha Youth
+                    </div>
+                </div>
+                <div class="member">
+                    {% for m in members %}
+                        {% if m.user != member.user %}
+                        <a href="{% url 'user-selected-profile' m.user.id %}">
+                        <div class="card">
+                            <img src="{{m.image.url}}" alt="profile image">
+                            <h4>{{m.user.first_name}} {{m.user.last_name}}</h4>
+                        </div>
+                        </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="notification_section">
+                    <div class="card">
+                        <div class="card-header">
+                            Recent Notification
+                        </div>
+                        <div class="card-body">
+                            <div class="announcement">
+                                <p class="announcement-header">
+                                    Saturday, Jan 13th
+                                </p>
+                                <p class="announcement-body">
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                </p>
+                                <p class="announcement-header">
+                                    Saturday, Jan 13th
+                                </p>
+                                <p class="announcement-body">
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                </p>
+                                <p class="announcement-header">
+                                    Saturday, Jan 13th
+                                </p>
+                                <p class="announcement-body">
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                    dfd fds fsdf sf sf sdf sdfs dfsdfsdf sdfsd fdf
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+{% block footer %}
+    {% include "footer/footer.html" %}
+{% endblock %}
+{% block js%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+{% endblock %}

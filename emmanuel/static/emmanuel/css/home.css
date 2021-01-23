@@ -1,7 +1,6 @@
 @import url("https://use.typekit.net/xwb7lcz.css");
 
 #home-page{
-	background-image:url("/static/auth0login/images/AdobeStock_377773665.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
 	-webkit-background-size: cover;
@@ -11,7 +10,7 @@
     height:500px;
 }
 
-#about .message .welcome-title{
+.message .welcome-title{
 	text-align: center;
 	padding: 40px 0 0px;
 	font-family: acme-gothic,sans-serif;
@@ -19,20 +18,20 @@
 	font-style: normal;
 	font-size: 2.5em;
 }
-#about .message .welcome-title span{
+.message .welcome-title span{
 	font-family: nautica,sans-serif;
 	font-weight: 400;
 	font-style: normal;
 	color: #740000;
 }
-#about .message .about-text{
-	font-family: alana-smooth, sans-serif;
+.message .about-text{
+	font-family: monarcha, serif;
 	font-weight: 400;
-	font-style: normal;
-	font-size: 30px;
+	font-style: italic;
+	font-size: 25px;
 	text-align: center;
-	width: 900px;
-	margin: 0 auto;
+	width: 800px;
+	margin: 50px auto;
 	padding: 10px;
 }
 .underline{
@@ -40,27 +39,51 @@
 	width: 500px;
 	margin: 0 auto;
 }
-#about .message .welcome-subtitle{
+.message .welcome-subtitle{
 	text-align: center;
 	padding: 40px 0 0px;
 	font-family: acme-gothic,sans-serif;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 1.7em;
+	font-size: 2em;
+	color: #740000;
 }
 .committee-style{
 	display: grid;
-	grid-gap: 5px;
+	grid-gap: 10px;
 	grid-template-columns: repeat(1, 1fr);
 	grid-template-rows: 200px 200px;
 	justify-items: center;
+	align-content: center;
 	padding:30px 15%;
+}
+
+#verse_Jeremiah{
+    background-repeat: no-repeat;
+    background-size: cover;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+      -o-background-size: cover;
+    width: 100%;
+	height:500px;
+}
+#verse_Jeremiah p{
+	top: 50%;
+	text-align: center;
+	width: 900px;
+	margin: 0 auto;
+	font-family: alana-smooth, sans-serif;
+	font-weight: 400;
+	font-style: bold;
+	font-size: 50px;
+	padding:10px 0;
+	color: #2c2c2c;
 }
 /*medium screen*/
 @media (min-width:600px) and (max-width:900px){
 	.committee-style{
 		display: grid;
-		grid-gap: 5px;
+		grid-gap: 10px;
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: 200px 200px;
 		justify-items: center;
@@ -71,22 +94,28 @@
 @media (min-width:901px){
 	.committee-style{
 		display: grid;
-		grid-gap: 5px;
-		grid-template-columns: repeat(5, 1fr);
+		grid-gap: 20px;
+		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: 200px 200px;
 		justify-items: center;
 		padding:30px 15%;
+		align-content: center;
 	}
 }
 .committe-img img{
 	height: 150px;
 	padding: 10px;
 }
+.committe-img .committe-subtitle{
+	color:#740000;
+	font-style:italic;
+}
 .committe-img p{
 	text-align: center;
 	font-size: 18px;
 }
 #message-image{
+	margin:20px 0 0;
 	display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -110,6 +139,7 @@
 		height: 500px;
 	}
 	#message-image{
+		margin:20px 0 0;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -118,22 +148,62 @@
 		background-color: #A2DADE;
 	}
 }
-#founder-quote img{
+.founder-quote img{
 	display: block;
 	margin: 0 auto;
 	height: 200px;
 	padding: 25px 10px 5px;
 }
-#founder-quote .name{
+.founder-quote .name{
 	text-align: center;
 	font-size: 18px;
 	font-weight: bold;
 }
-#founder-quote .quote{
+.founder-quote .quote{
 	text-align: center;
 	font-family: alana-smooth, sans-serif;
 	font-weight: 400;
 	font-style: normal;
 	font-size: 25px;
 	padding: 10px 15% 30px;
+}
+.card{
+	padding: 15px;
+	background-color:#fff;
+	box-shadow: 10px 5px 5px lightgray;
+	margin:20px;
+}
+.card .card-header{
+	text-align: center;
+	padding: 5px 0 30px;
+	font-family: acme-gothic,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 20px;
+	color: #740000;
+}
+.card .card-body{
+	padding: 0 10px;
+}
+.announcement .announcement-header{
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size:16px;
+}
+.announcement .announcement-body{
+	font-size:14px;
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+.member{
+	display: grid;
+	grid-template-columns:repeat(3, 1fr);
+}
+.member .card img{
+	display: block;
+	margin:10px auto;
+	height:100px;
+}
+.member .card h4{
+	text-align: center;
 }
