@@ -22,6 +22,7 @@ class Event(models.Model):
     eventDate = models.DateTimeField(null=True, blank=True)
     isActive = models.BooleanField(default=True)
     price = models.FloatField(default=0)
+    streamingLink = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.name

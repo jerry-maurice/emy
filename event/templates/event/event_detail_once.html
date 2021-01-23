@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'navigation/navigation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'footer/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/event.css' %}">
+{% endblock %}
+{% block header %}
+    {% include "navigation/navigation.html" %}
+{% endblock %}
+{% block content %}
+<main>
+    <div id="event-home-page" style="background-image: url('{{event.imagePage}}')">
+    </div>
+    <div class="event-welcome-tittle" id="">
+        <div class="message">
+            <p class="welcome-title">Emmanuel Maranatha <span>Youth</span></p>
+            <p class="subtitle">{{event.name}}</p>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="message" id="">
+            <p class="about-text">{{event.about}}</p>
+            <img class="img-poster" src="{{event.imagePoster}}">
+        </div>
+        <div class="card access-link">
+            <p>Please click below to access the zoom link</p>
+            <p><a target="_blank" href="{{event.streamingLink}}">{{event.streamingLink}}</a></p>
+        </div>
+    </div>
+</main>
+{% endblock %}
+{% block footer %}
+    {% include "footer/footer.html" %}
+{% endblock %}

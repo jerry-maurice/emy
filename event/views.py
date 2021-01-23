@@ -42,3 +42,8 @@ def events_detail(request,event_id):
             'agenda':agenda,
         }
         return render(request,'emmanuel/event_detail.html',context)
+    elif event.occurence == 'O':
+        context = {
+            'event':event,
+        }
+        return render(request,'event/event_detail_once.html',context)

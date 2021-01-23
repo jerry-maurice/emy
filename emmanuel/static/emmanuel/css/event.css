@@ -179,3 +179,15 @@ event
 .table-body:hover {
 	background-color:rgb(255, 176, 176);
 }
+.img-poster{
+	height:600px;
+	display:block;
+	margin:0 auto;
+	padding:10px;
+}
+.access-link{
+	margin:50px;
+}
+.access-link p{
+	text-align: center;
+}
