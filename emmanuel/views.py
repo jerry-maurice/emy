@@ -89,6 +89,8 @@ def newProfile(request):
         if not Member.objects.filter(user=user).exists():
             member = Member(user=user, image=profileImage, dateofbirth=profileDob, about=about)
             member.save()
+            follow = Follow(user=user, target=user)
+            follow.save()
         return redirect(user_profile)
 
 
