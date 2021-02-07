@@ -13,6 +13,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 # Create your views here.
+@login_required
 def mediaView(request):
     media = medialibrary.objects.filter(is_video=False)
     video = medialibrary.objects.filter(is_video=True)
