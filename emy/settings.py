@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'stream_django',
     'streamapp',
     'storages',
-    'notification'
+    'notification',
+    'mediaApp',
 ]
 
 MIDDLEWARE = [

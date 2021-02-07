@@ -22,5 +22,6 @@ urlpatterns = [
     path('contest/', include('contest.urls')),
     path('', include('emmanuel.urls')),
     path('events/', include('event.urls')),
-    path('notification/', include('notification.urls'))
+    path('notification/', include('notification.urls')),
+    path('media/', include('mediaApp.urls'))
 ]

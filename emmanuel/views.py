@@ -13,6 +13,9 @@ from account.models import Member
 from streamapp.models import Tweet, Item, Follow
 from notification.models import Notification
 import logging
+from django.http import JsonResponse
+from django.db.models import Q
+from django.core.serializers import serialize
 
 enricher = Enrich()
 # get an instance of a logger
@@ -42,17 +45,24 @@ def user_home(request):
         }
         return render(request, 'emmanuel/home.html',context)
     if request.method == 'POST':
+        videos = ['avi','mp4','mov','wmv','MP4','AVI','MOV', 'WMV']
         textFeed = None
         imageFeed = None
+        checkVideo = False
         #if request.POST['postFeed']:
         textFeed = request.POST['postFeed']
         if (request.FILES):
             imageFeed = request.FILES['postFeedImage']
             logger.info("image added")
-            logger.info(imageFeed.name)
+            imageName= imageFeed.name
+            # split name to check if it is a video
+            imageNameList = imageName.split('.')
+            if imageNameList[1] in videos:
+                checkVideo = True
+            logger.info(checkVideo)
         #item = Item(text=textFeed, image=imageFeed, author=user)
         #item.save()
-        tweet = Tweet(author=user,text=textFeed, image=imageFeed)
+        tweet = Tweet(author=user,text=textFeed, image=imageFeed, is_video=checkVideo)
         tweet.save()
         return redirect(user_home)
 
@@ -148,6 +158,18 @@ def unfollowing(request,target_id):
         follow = get_object_or_404(Follow, user=user, target=target)
         follow.delete()
         return redirect(discover)
+
+        
+@login_required
+def discovering(request):
+    if request.is_ajax():
+        #follower = serialize("json",Follow.objects.filter(target=request.user).count())
+        #following = serialize("json",Follow.objects.filter(user=request.user).count())
+        data = {
+            'follower':Follow.objects.filter(target=request.user).count(),
+            'following':Follow.objects.filter(user=request.user).count(),
+        }
+        return JsonResponse(data, safe=False)
 
 '''
 @login_required

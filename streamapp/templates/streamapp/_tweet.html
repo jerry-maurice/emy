@@ -11,7 +11,14 @@
     </div>
     <div>
       {% if tweet.image %}
-        <img src="{{tweet.image.url}}" alt="post">
+        {% if tweet.is_video %}
+          <video width="320" height="240" controls>
+              <source src="{{tweet.image.url}}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        {% else %}
+          <img src="{{tweet.image.url}}" alt="post">
+        {% endif %}
       {% endif %}
     </div>
     {% endautoescape %}

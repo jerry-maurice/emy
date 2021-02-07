@@ -122,3 +122,7 @@ form
     cursor: pointer;
     transition: transform .2s ease-out;
 }
+#filename p{
+    text-align: center;
+    font-style: italic;
+}

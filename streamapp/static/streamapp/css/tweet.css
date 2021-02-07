@@ -38,6 +38,11 @@
     display: block;
     text-align: center;
 }
+.card .card-body-tweet div video{
+    width:400px;
+    display: block;
+    text-align: center;
+}
 .card .card-body-tweet div{
     font-family: 'Times New Roman', Times, serif;
     font-size:16px;

@@ -11,7 +11,7 @@
                     {{n.created|time_difference }}
                 </p>
                 <p class="announcement-body">
-                    {{n.message}}
+                    {{n.title}}
                     {% if n.message %}
                     <a href="{% url 'notification-detail' n.id %}">...more</a>
                     {% endif %}

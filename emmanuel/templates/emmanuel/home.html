@@ -25,6 +25,7 @@
                 <div class="card">
                     {% include "navigation/vertical_navigation.html" %}
                 </div>
+                {% include "emmanuel/discovery_side.html" %}
             </div>
             <div class="detail_section">
                 <div class="card" id="feed_post">
@@ -41,6 +42,7 @@
                             <button type="submit" class="">Share</button>
                         </div>
                     </form>
+                    <div id="filename"></div>
                 </div>
                 <div class="">
                     {% for activity in activities %}
@@ -61,4 +63,17 @@
 {% block js%}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+<script src="{% static 'streamapp/js/recommendation.js' %}"></script>
+<script>
+    const inputFile = document.getElementById('postFeedImage');
+    const fileName = document.getElementById('filename');
+    inputFile.addEventListener('change',(event)=>{
+        let filetext = document.createElement('p');
+        filetext.textContent = inputFile.files[0].name;
+        if(fileName.firstChild){
+            fileName.removeChild(fileName.firstChild);
+        }
+        fileName.appendChild(filetext);
+    });
+</script>
 {% endblock %}
