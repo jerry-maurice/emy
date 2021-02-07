@@ -23,5 +23,5 @@ urlpatterns = [
     path('', include('emmanuel.urls')),
     path('events/', include('event.urls')),
     path('notification/', include('notification.urls')),
-    path('media/', include('mediaApp.urls'))
+    path('library/', include('mediaApp.urls'))
 ]
