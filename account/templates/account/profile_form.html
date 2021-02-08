@@ -22,9 +22,9 @@
                 <div class="">
                     <a href="{% url 'user-profile' %}">
                         {% if member %}
-                        <img id="profile-image" src="" alt="profile image" height=500>
+                        <img id="profile-image" src="{{picture}}" alt="profile image" height=500>
                         {% else %}
-                        <img id="profile-image" src="{% static 'auth0login/images/emy.png' %}" alt="profile image" height=500 width=250>
+                        <img id="profile-image" src="{{picture}}" alt="profile image" height=500 width=250>
                         {% endif %}
                     </a>
                 </div>
@@ -44,6 +44,7 @@
                                 <label for="profile_picture">Profile Picture</label>
                                 <input accept="image/x-png,image/gif,image/jpeg" required type="file" name="profile_picture" class="form-input" id="profile_picture">
                             </div>
+                            <div id="filename"></div>
                             <div class="form-group">
                                 <label>Date of Birth</label>
                                 <input required type="date" name="profile_dob" class="form-input">
@@ -71,4 +72,16 @@
 {% block js%}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+<script>
+        const inputFile = document.getElementById('profile_picture');
+        const fileName = document.getElementById('filename');
+        inputFile.addEventListener('change',(event)=>{
+            let filetext = document.createElement('p');
+            filetext.textContent = inputFile.files[0].name;
+            if(fileName.firstChild){
+                fileName.removeChild(fileName.firstChild);
+            }
+            fileName.appendChild(filetext);
+        });
+    </script>
 {% endblock %}

@@ -88,8 +88,12 @@ def user_profile(request):
 @login_required
 def newProfile(request):
     user = request.user
+    auth0user = user.social_auth.get(provider='auth0')
     if request.method == 'GET':
-        return render(request, 'account/profile_form.html')
+        context= {
+            'picture':auth0user.extra_data['picture']
+        }
+        return render(request, 'account/profile_form.html', context)
     if request.method == 'POST':
         profileImage = None
         if request.FILES:
