@@ -17,10 +17,10 @@
 }
 .body_section{
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content: center;
     align-content: center;
-    width: 1400px;
+    width: 300px;
 }
 .shortcut_section{
     width: 350px;
@@ -33,4 +33,25 @@
 }
 body{
     background-color: rgb(252, 240, 240);
+}
+
+/*medium screen*/
+@media (min-width:600px) and (max-width:900px){
+    .body_section{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-content: center;
+        width: 800px;
+    }
+}
+/*large screen*/
+@media (min-width:901px){
+    .body_section{
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-content: center;
+        width: 1400px;
+    }
 }
