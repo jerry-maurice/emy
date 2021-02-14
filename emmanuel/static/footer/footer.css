@@ -31,6 +31,7 @@
 }
 .footer-message{
 	display: flex;
+	flex-direction: column;
 	padding: 10px 30%;
     justify-content: space-between;
     align-items: center;
@@ -44,6 +45,60 @@
 	font-size: 20px;
 }
 .copyright-footer{
+	margin-top:50px;
 	text-align: center;
 	padding:20px;
+}
+
+/*large screen*/
+@media (min-width:901px){
+	.footer-top{
+		height: 200px;
+		background-color: #A2DADE;
+	}.footer-top p{
+		text-align: center;
+		padding: 30px 0 10px;
+		font-family: tangier,sans-serif;
+		font-weight: 700;
+		font-style: normal;
+		font-size: 40px;
+	}
+	.footer-bottom{
+		height: 300px;
+	}
+	.footer-bottom .announcement{
+		text-align: center;
+		padding: 40px 0 5px;
+		font-family: acme-gothic,sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 2.5em;
+	}
+	.footer-bottom .phone-number{
+		text-align: center;
+		font-family: nautica,sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		color: #740000;
+		font-size: 25px;
+	}
+	.footer-message{
+		display: flex;
+		flex-direction: row;
+		padding: 10px 30%;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.footer-message p{
+		margin-top: 20px;
+		text-transform: uppercase;
+		color: #740000;
+		background-color: #A2DADE;
+		padding: 10px;
+		font-size: 20px;
+	}
+	.copyright-footer{
+		text-align: center;
+		padding:20px;
+	}
 }

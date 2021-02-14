@@ -2,14 +2,14 @@
 form
 */
 .contact-form{
-    width:500px;
+    width:300px;
     display:block;
     margin:0 auto;
 }
 .contact-form div{
     display:flex;
     flex-direction:column;
-    margin: 20px;
+    margin: 10px;
 }
 .contact-form div label{
     font-size: 20px;
@@ -33,6 +33,79 @@ form
 }
 .contact-form div textarea:focus{
     outline: none;
+}
+/*medium screen*/
+@media (min-width:600px) and (max-width:900px){
+    .contact-form{
+        width:500px;
+        display:block;
+        margin:0 auto;
+    }
+    .contact-form div{
+        display:flex;
+        flex-direction:column;
+        margin: 20px;
+    }
+    .contact-form div label{
+        font-size: 20px;
+    }
+    .contact-form div input{
+        height:40px;
+        font-size:20px;
+        margin:10px;
+        border:none;
+        border-bottom: 1px solid #740000;
+    }
+    .contact-form div input:focus{
+        outline: none;
+    }
+    .contact-form div textarea{
+        height:150px;
+        font-size:14px;
+        font-style:italic;
+        margin:10px;
+        border-radius: 5px;
+    }
+    .contact-form div textarea:focus{
+        outline: none;
+    }
+}
+
+/*large screen*/
+@media (min-width:901px){
+    .contact-form{
+        width:500px;
+        display:block;
+        margin:0 auto;
+    }
+    .contact-form div{
+        display:flex;
+        flex-direction:column;
+        margin: 20px;
+    }
+    .contact-form div label{
+        font-size: 20px;
+    }
+    .contact-form div input{
+        height:40px;
+        font-size:20px;
+        margin:10px;
+        border:none;
+        border-bottom: 1px solid #740000;
+    }
+    .contact-form div input:focus{
+        outline: none;
+    }
+    .contact-form div textarea{
+        height:150px;
+        font-size:14px;
+        font-style:italic;
+        margin:10px;
+        border-radius: 5px;
+    }
+    .contact-form div textarea:focus{
+        outline: none;
+    }
 }
 /*
 * form to share feed

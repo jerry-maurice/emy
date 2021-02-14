@@ -1,5 +1,8 @@
 @import url("https://use.typekit.net/xwb7lcz.css");
 
+body{
+	overflow-x: none;
+}
 #home-page{
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,9 +31,9 @@
 	font-family: monarcha, serif;
 	font-weight: 400;
 	font-style: italic;
-	font-size: 25px;
+	font-size: 20px;
 	text-align: center;
-	width: 800px;
+	width: 300px;
 	margin: 50px auto;
 	padding: 10px;
 }
@@ -70,12 +73,12 @@
 #verse_Jeremiah p{
 	top: 50%;
 	text-align: center;
-	width: 900px;
+	width: 300px;
 	margin: 0 auto;
 	font-family: alana-smooth, sans-serif;
 	font-weight: 400;
 	font-style: bold;
-	font-size: 50px;
+	font-size: 25px;
 	padding:10px 0;
 	color: #2c2c2c;
 }
@@ -89,6 +92,28 @@
 		justify-items: center;
 		padding:30px 15%;
 	}
+	#verse_Jeremiah p{
+		top: 50%;
+		text-align: center;
+		width: 500px;
+		margin: 0 auto;
+		font-family: alana-smooth, sans-serif;
+		font-weight: 400;
+		font-style: bold;
+		font-size: 50px;
+		padding:10px 0;
+		color: #2c2c2c;
+	}
+	.message .about-text{
+		font-family: monarcha, serif;
+		font-weight: 400;
+		font-style: italic;
+		font-size: 25px;
+		text-align: center;
+		width: 500px;
+		margin: 50px auto;
+		padding: 10px;
+	}
 }
 /*large screen*/
 @media (min-width:901px){
@@ -100,6 +125,28 @@
 		justify-items: center;
 		padding:30px 15%;
 		align-content: center;
+	}
+	#verse_Jeremiah p{
+		top: 50%;
+		text-align: center;
+		width: 900px;
+		margin: 0 auto;
+		font-family: alana-smooth, sans-serif;
+		font-weight: 400;
+		font-style: bold;
+		font-size: 50px;
+		padding:10px 0;
+		color: #2c2c2c;
+	}
+	.message .about-text{
+		font-family: monarcha, serif;
+		font-weight: 400;
+		font-style: italic;
+		font-size: 25px;
+		text-align: center;
+		width: 800px;
+		margin: 50px auto;
+		padding: 10px;
 	}
 }
 .committe-img img{
