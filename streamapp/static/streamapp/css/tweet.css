@@ -47,3 +47,11 @@
     font-family: 'Times New Roman', Times, serif;
     font-size:16px;
 }
+.social-intterraction{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.hideDiv{
+    display:none;
+}

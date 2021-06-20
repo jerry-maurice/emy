@@ -1,7 +1,7 @@
 {% load filters %}
 <div class="card">
   <div class="card-header-tweet">
-    <p><a href="/user/{{ tweet.user.username }}">{{ tweet.author.username }}</a></p>
+    <p><a href="/user/{{ tweet.user.username }}">{{ tweet.author.first_name }}</a></p>
     <p class="time-font">{{ tweet.created_at|time_difference }}</p>
   </div>
   <div class="card-body-tweet">
@@ -21,6 +21,79 @@
         {% endif %}
       {% endif %}
     </div>
+    <div class="social-intterraction">
+        <div>
+          <i onclick="alert('working')"; class="fa fa-thumbs-up"> <b>0</b> Like</i>
+        </div>
+        <div>
+          <i onclick="alert('working')"; class="fa fa-comment"> <b>0</b> comment</i>
+        </div>
+        <div>
+            <i onclick="addComment(this,`{{tweet.id}}`)"; class="fa fa-plus"> new comment</i>
+        </div>
+    </div>
     {% endautoescape %}
   </div>
 </div>
+{% block js %}
+<script>
+  document.addEventListener('DOMContentLoaded', ()=>{
+    let commentBox = document.getElementsByClassName('showCommentBox');
+
+    //remove all comment box
+    for(let box of commentBox){
+      //box.classList.add('hideDiv');
+      box.style.display = "none";
+    }
+  });
+  //adding comment
+  function addComment(element,id){
+    //create fragment
+    let fragment = new DocumentFragment();
+
+    let interaction = element.parentNode.parentNode;
+    //create div for the form and add it after the social interraction box 
+    let divCommentBox= document.createElement('div');
+    interaction.after(divCommentBox);
+
+    /*
+    *create form that will post comment for post
+    */
+    let commentForm = document.createElement('form');
+    commentForm.classList.add('form');
+
+    let divGroupOne = document.createElement('div');
+    let divGroupTwo = document.createElement('div');
+
+    let inputForm = document.createElement('input');
+    inputForm.type = 'text';
+    inputForm.classList.add('form-input');
+
+    divGroupOne.appendChild(inputForm);
+    commentForm.appendChild(divGroupOne);
+
+    let submitForm = document.createElement('button');
+    submitForm.type = 'submit';
+    submitForm.textContent = 'ADD';
+    divGroupTwo.appendChild(submitForm);
+
+    commentForm.appendChild(divGroupTwo);
+    //
+    fragment.appendChild(commentForm);
+    removeChildNodes(divCommentBox);
+    divCommentBox.appendChild(fragment);
+      
+
+  
+  }
+  //remove child nodes
+  function removeChildNodes(parent){
+    console.log(parent);
+    while(parent.firstChild){
+      console.log(parent.firstChild);
+      parent.removeChild(parent.lastChild);
+    }
+  }
+  
+</script>
+{% endblock %}

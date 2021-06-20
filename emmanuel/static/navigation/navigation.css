@@ -59,3 +59,9 @@ button:hover{
 	list-style:none;
 	padding:5px 20px;
 }
+.expand{
+	max-height:20em;
+}
+#menu-icon{
+	display:none;
+}

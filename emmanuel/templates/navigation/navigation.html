@@ -1,7 +1,7 @@
 {% load static %}
 <header>
     <img class="log" src="{% static 'auth0login/images/emy.png' %}" alt="logo" height="50">
-    <nav>
+    <nav id="navbar">
         <ul class="nav_links">
             {% if user.is_authenticated %}
             <li><a href="{% url 'user-home' %}">Home</a></li>
@@ -19,4 +19,5 @@
     {% else %}
     <a class="cta" href="/login/auth0"><button>Login</button></a>
     {% endif %}
+    <a id="menu-icon">&#9776; Menu</a>
 </header>

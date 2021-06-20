@@ -1,0 +1,9 @@
+# created by virtualenv automatically
+db.sqlite3
+.env
+*.migrations
+*.py[co]
+.idea
+*.DS_Store
+*/migrations
+**/.events.html.icloud
