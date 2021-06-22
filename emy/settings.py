@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'storages',
     'notification',
     'mediaApp',
+    'home',
 ]
 
 MIDDLEWARE = [

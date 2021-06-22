@@ -20,7 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('auth0login.urls')),
     path('contest/', include('contest.urls')),
-    path('', include('emmanuel.urls')),
+    # path('', include('emmanuel.urls')),
+    path('', include('home.urls')),
     path('events/', include('event.urls')),
     path('notification/', include('notification.urls')),
     path('library/', include('mediaApp.urls'))

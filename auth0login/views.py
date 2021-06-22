@@ -21,7 +21,7 @@ def index(request):
         context = {
             'events':events,
         }
-        return render(request, 'emmanuel/index.html', context)
+        return render(request, 'home/index.html', context)
 
 '''
 

@@ -7,4 +7,5 @@ db.sqlite3
 *.DS_Store
 */migrations
 **/.events.html.icloud
-*.pyc
+**.pyc
+venv

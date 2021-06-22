@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'essentials/css/navigation.css' %}">
+{% endblock %}
+{% block header %}
+    {% include "essentials/navigation.html" %}
+{% endblock %}
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'essentials/js/navigation.js' %}"></script>
+{% endblock %}
