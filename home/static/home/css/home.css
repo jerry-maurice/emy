@@ -1,13 +1,14 @@
 @import url("https://use.typekit.net/xwb7lcz.css");
+
 /*
 * general style for section
 */
 .container{
-    width: 1000px;
+    width: 500px;
     margin: 0 auto;
 }
 .sectionImage{
-    height: 500px;
+    height: 300px;
 }
 .section_title{
     margin:10px;
@@ -27,32 +28,33 @@
   	-moz-background-size: cover;
       -o-background-size: cover;
     width: 100%;
-    height:600px;
+    height:300px;
 }
 
 .quotation{
-    position: absolute;
-    width: 900px;
-    height:200px;
-    padding:20px;
+    position: relative;
+    width: 300px;
+    height:100px;
+    padding:10px;
     top:70%;
     left:50%;
     margin-right: -50%;
     transform: translate(-50%, -50%) ;
     background-color: #ffffff7e;
+    z-index:-1;
 }
 .quotation .quote{
     text-align: center;font-family: acme-gothic,sans-serif;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 2.5em;
+	font-size: 1em;
 	color: #3B0000;
 }
 .quotation .author{
     font-family: nautica,sans-serif;
 	font-weight: 400;
 	font-style: normal;
-    font-size:1.5rem;
+    font-size:0.8rem;
     color:#ffffff;
     text-align: center;
 }
@@ -65,7 +67,7 @@
 	font-family: acme-gothic,sans-serif;
 	font-weight: 400;
 	font-style: normal;
-    font-size: 3em;
+    font-size: 2.5em;
 }
 .page_title .welcome-title span{
 	font-family: nautica,sans-serif;
@@ -75,31 +77,31 @@
 }
 #aboutContent{
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content: center;
     padding: 50px 20px;
 }
 #aboutImage{
-    margin-right: -20px
+    margin:0 auto;
 }
 #aboutText{
     font-family: monarcha, serif;
 	font-weight: 400;
 	font-style: italic;
-	font-size: 20px;
+	font-size: 14px;
 	text-align: center;
 	width: 500px;
-	margin: 100px auto 20px;
+	margin: 10px auto 20px;
     padding: 10px;
     background-color: white;
 }
 #motto{
-    height:100px;
+    height:150px;
     background-color:#740000;
 }
 #motto{
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     align-items:center;
     justify-content:space-between;
 }
@@ -108,23 +110,21 @@
     font-family: nautica,sans-serif;
 	font-weight: 400;
     font-style: normal;
-    font-size:3em;
+    font-size:1.5em;
     color: #ffffff;
 }
-#motto p:not(:last-of-type){
-    border-right:2px solid #ffffff; 
-}
+
 /*
 *get involved page
 */
 #getInvolved{
     display: flex;
     flex-direction:row;
-    height:400px;
+    height:300px;
 }
 #getInvolved p{
     position: relative;
-    font-size:80px;
+    font-size:40px;
     top:70%;
     left:50%;
     margin-right: -50%;
@@ -134,7 +134,7 @@
 #getInvolved h3{
     position: relative;
     top:50%;
-    left:46%;
+    left:35%;
     color:#ffffff;
     border: 1px solid #ffffff;
     height: 70px;
@@ -151,14 +151,14 @@
 #messageSection{
     margin:20px 0 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding:100px 15%;
     background-color: #740000;
 }
 #messageSection img{
-	height: 250px;
+	height: 200px;
 	padding: 10px;
 	box-shadow: 0 8px 6px -6px black;
 }
@@ -167,7 +167,7 @@
 */
 #head-leaders{
     display: flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content:space-between;
 }
 .bg-user-card{
@@ -233,4 +233,346 @@
 .separatorSection{
     height: 400px;
     margin-top:50px;
+}
+
+/*medium screen*/
+@media (min-width:600px) and (max-width:900px){
+    /*
+    * general style for section
+    */
+    .container{
+        width: 700px;
+        margin: 0 auto;
+    }
+    .sectionImage{
+        height: 400px;
+    }
+
+    /*
+    * homepage style
+    */
+    #homePage{
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        width: 100%;
+        height:500px;
+    }
+    .quotation{
+        position: relative;
+        width: 600px;
+        height:150px;
+        padding:20px;
+        top:70%;
+        left:50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) ;
+        background-color: #ffffff7e;
+        z-index:-1;
+    }
+    .quotation .quote{
+        text-align: center;font-family: acme-gothic,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.8em;
+        color: #3B0000;
+    }
+    .quotation .author{
+        font-family: nautica,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size:1.1rem;
+        color:#ffffff;
+        text-align: center;
+    }
+
+    /*
+    *about page style
+    */
+    .page_title .welcome-title{
+        text-align: center;
+        padding: 40px 0 0px;
+        font-family: acme-gothic,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2.9em;
+    }
+    .page_title .welcome-title span{
+        font-family: nautica,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #740000;
+    }
+    #aboutContent{
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        padding: 50px 20px;
+    }
+    #aboutImage{
+        margin-right: -20px
+    }
+    #aboutText{
+        font-family: monarcha, serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 15px;
+        text-align: center;
+        width: 500px;
+        margin: 30px auto 20px;
+        padding: 10px;
+        background-color: white;
+    }
+    #motto{
+        height:80px;
+        background-color:#740000;
+    }
+    #motto{
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-around;
+    }
+    #motto p{
+        padding: 0 20px;
+        font-family: nautica,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size:2.5em;
+        text-align: center;
+        color: #ffffff;
+    }
+    #motto p:not(:last-of-type){
+        border-right:2px solid #ffffff; 
+    }
+
+    /*
+    *get involved page
+    */
+    #getInvolved{
+        display: flex;
+        flex-direction:row;
+        height:300px;
+    }
+    #getInvolved p{
+        position: relative;
+        font-size:60px;
+        top:70%;
+        left:50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) ;
+        color:#ffffffc7;
+    }
+    #getInvolved h3{
+        position: relative;
+        top:50%;
+        left:39%;
+        color:#ffffff;
+        border: 1px solid #ffffff;
+        height: 70px;
+        padding:20px 20px;
+        cursor: pointer;
+    }
+    #getInvolved h3:hover{
+        background-color:#ffffff;
+        color:#740000;
+    }
+    /*
+    * message image section
+    */
+    #messageSection{
+        margin:20px 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding:100px 15%;
+        background-color: #740000;
+    }
+    #messageSection img{
+        height: 250px;
+        padding: 10px;
+        box-shadow: 0 8px 6px -6px black;
+    }
+    /*
+    * committee image section
+    */
+    #head-leaders{
+        display: flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+}
+/*large screen*/
+@media (min-width:901px){
+    /*
+    * general style for section
+    */
+    .container{
+        width: 1000px;
+        margin: 0 auto;
+    }
+    .sectionImage{
+        height: 500px;
+    }
+
+    /*
+    * homepage style
+    */
+    #homePage{
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        width: 100%;
+        height:600px;
+    }
+    .quotation{
+        position: relative;
+        width: 900px;
+        height:200px;
+        padding:20px;
+        top:70%;
+        left:50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) ;
+        background-color: #ffffff7e;
+        z-index:-1;
+    }
+    .quotation .quote{
+        text-align: center;font-family: acme-gothic,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2.5em;
+        color: #3B0000;
+    }
+    .quotation .author{
+        font-family: nautica,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size:1.5rem;
+        color:#ffffff;
+        text-align: center;
+    }
+
+    /*
+    *about page style
+    */
+    .page_title .welcome-title{
+        text-align: center;
+        padding: 40px 0 0px;
+        font-family: acme-gothic,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 3em;
+    }
+    .page_title .welcome-title span{
+        font-family: nautica,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #740000;
+    }
+    #aboutContent{
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        padding: 50px 20px;
+    }
+    #aboutImage{
+        margin-right: -20px
+    }
+    #aboutText{
+        font-family: monarcha, serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 20px;
+        text-align: center;
+        width: 500px;
+        margin: 100px auto 20px;
+        padding: 10px;
+        background-color: white;
+    }
+    #motto{
+        height:100px;
+        background-color:#740000;
+    }
+    #motto{
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+    }
+    #motto p{
+        padding: 0 100px;
+        font-family: nautica,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size:3em;
+        color: #ffffff;
+    }
+    #motto p:not(:last-of-type){
+        border-right:2px solid #ffffff; 
+    }
+
+    /*
+    *get involved page
+    */
+    #getInvolved{
+        display: flex;
+        flex-direction:row;
+        height:400px;
+    }
+    #getInvolved p{
+        position: relative;
+        font-size:80px;
+        top:70%;
+        left:50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) ;
+        color:#ffffffc7;
+    }
+    #getInvolved h3{
+        position: relative;
+        top:50%;
+        left:46%;
+        color:#ffffff;
+        border: 1px solid #ffffff;
+        height: 70px;
+        padding:20px 20px;
+        cursor: pointer;
+    }
+    #getInvolved h3:hover{
+        background-color:#ffffff;
+        color:#740000;
+    }
+    /*
+    * message image section
+    */
+    #messageSection{
+        margin:20px 0 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding:100px 15%;
+        background-color: #740000;
+    }
+    #messageSection img{
+        height: 250px;
+        padding: 10px;
+        box-shadow: 0 8px 6px -6px black;
+    }
+    /*
+    * committee image section
+    */
+    #head-leaders{
+        display: flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items: center;
+        align-content: center;
+    }
 }
