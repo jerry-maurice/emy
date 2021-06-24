@@ -2,7 +2,6 @@ from django.urls import path, include
 from emmanuel import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
     path('home/', views.user_home, name='user-home'),
     path('profile/', views.user_profile, name='user-profile'),
     path('profile/new/', views.newProfile, name='new-profile'),

@@ -1,0 +1,236 @@
+@import url("https://use.typekit.net/xwb7lcz.css");
+/*
+* general style for section
+*/
+.container{
+    width: 1000px;
+    margin: 0 auto;
+}
+.sectionImage{
+    height: 500px;
+}
+.section_title{
+    margin:10px;
+}
+.section_title h3{
+    font-size:50px;
+    text-align: center;
+    padding: 20px 0 10px;
+}
+/*
+*Home page style
+*/
+#homePage{
+    background-repeat: no-repeat;
+    background-size: cover;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+      -o-background-size: cover;
+    width: 100%;
+    height:600px;
+}
+
+.quotation{
+    position: absolute;
+    width: 900px;
+    height:200px;
+    padding:20px;
+    top:70%;
+    left:50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) ;
+    background-color: #ffffff7e;
+}
+.quotation .quote{
+    text-align: center;font-family: acme-gothic,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2.5em;
+	color: #3B0000;
+}
+.quotation .author{
+    font-family: nautica,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+    font-size:1.5rem;
+    color:#ffffff;
+    text-align: center;
+}
+/*
+*about page style
+*/
+.page_title .welcome-title{
+	text-align: center;
+	padding: 40px 0 0px;
+	font-family: acme-gothic,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+    font-size: 3em;
+}
+.page_title .welcome-title span{
+	font-family: nautica,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #740000;
+}
+#aboutContent{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    padding: 50px 20px;
+}
+#aboutImage{
+    margin-right: -20px
+}
+#aboutText{
+    font-family: monarcha, serif;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 20px;
+	text-align: center;
+	width: 500px;
+	margin: 100px auto 20px;
+    padding: 10px;
+    background-color: white;
+}
+#motto{
+    height:100px;
+    background-color:#740000;
+}
+#motto{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+}
+#motto p{
+    padding: 0 100px;
+    font-family: nautica,sans-serif;
+	font-weight: 400;
+    font-style: normal;
+    font-size:3em;
+    color: #ffffff;
+}
+#motto p:not(:last-of-type){
+    border-right:2px solid #ffffff; 
+}
+/*
+*get involved page
+*/
+#getInvolved{
+    display: flex;
+    flex-direction:row;
+    height:400px;
+}
+#getInvolved p{
+    position: relative;
+    font-size:80px;
+    top:70%;
+    left:50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) ;
+    color:#ffffffc7;
+}
+#getInvolved h3{
+    position: relative;
+    top:50%;
+    left:46%;
+    color:#ffffff;
+    border: 1px solid #ffffff;
+    height: 70px;
+    padding:20px 20px;
+    cursor: pointer;
+}
+#getInvolved h3:hover{
+    background-color:#ffffff;
+    color:#740000;
+}
+/*
+* message image section
+*/
+#messageSection{
+    margin:20px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding:100px 15%;
+    background-color: #740000;
+}
+#messageSection img{
+	height: 250px;
+	padding: 10px;
+	box-shadow: 0 8px 6px -6px black;
+}
+/*
+* committee image section
+*/
+#head-leaders{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+.bg-user-card{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    height: 250px;
+    width: 450px;
+}
+.bg-user-card{
+    display: flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    margin:10px 5px;
+}
+.bg-user-card div img{
+    height: 225px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.bg-user-card div h4{
+    font-size: 1.5em;
+    text-align: center;
+    margin:80px 0 5px;
+}
+.bg-user-card div h6{
+    font-size: 15px;
+    text-align: center;
+}
+#committee{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.user-card{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    height: 250px;
+    width: 200px;
+}
+.user-card{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin:20px 5px;
+}
+.user-card div img{
+    height: 150px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.user-card div h4{
+    font-size: 1.1em;
+    text-align: center;
+    margin:20px 0 5px;
+}
+.user-card div h6{
+    font-size: 12px;
+    text-align: center;
+}
+/*
+* separator section
+*/
+.separatorSection{
+    height: 400px;
+    margin-top:50px;
+}

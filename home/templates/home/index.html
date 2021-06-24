@@ -3,18 +3,243 @@
 
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'essentials/css/navigation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/event.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/form.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/button.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'essentials/css/footer.css' %}">
 {% endblock %}
 {% block header %}
+    <!-- navigation -->
     {% include "essentials/navigation.html" %}
 {% endblock %}
 {% block content %}
+    <main>
+        <!--Home page-->
+        <section id="homePage" data-parallax="scroll" data-image-src="{% static 'home/images/emy_members.jpg' %}">
+            <div class="quotation">
+                <p class="quote">Young men be strong, keep God's word in your hearts, you have power over the devil</p>
+                <p class="author">1 John 2:14</p>
+            </div>
+        </section>
+        <!--About page-->
+        <section id="aboutPage">
+            <div class="container">
+                <div class="page_title">
+                    <p class="welcome-title">Emmanuel Maranatha <span>Youth</span></p>
+                </div>
+                <div id="aboutContent">
+                    <div id="aboutText">
+                        <p class="aboutText">
+                            Emmanuel Maranatha Youth, <abbr title="Emmanuel Maranatha Youth">"EMY"</abbr>, is a prayer group whose goal is to raise up a legacy of young people who has the capacity to learn, to follow the Word of God and to be empowered by the Holy Spirt who will help them understand and recognize who Jesus is. He will also help them fulfill the real purpose of their calling.<br />
+                            Our objective is to respond to the Social and Spiritual needs of the youth by providing relative programs, activities, and events that will allow them to build a strong foundation of faith that will enable them to express and share their faith and to use their talent in order to grow as children of God
+                        </p>
+                    </div>
+                    <div id="aboutImage">
+                        <img class="sectionImage" src="{% static 'home/images/zumilda_betou.png' %}" id="">
+                    </div>
+                </div>
+                <div id="motto">
+                    <p>Loving</p>
+                    <p>Helping</p>
+                    <p>Serving</p>
+                </div>
+            </div>
+        </section>
+        <!--Committee page-->
+        <section id="involvedPage">
+            <div id="getInvolved" class="container" data-parallax="scroll" data-image-src="{% static 'home/images/joinemy.jpeg' %}">
+                <p id="">Get Involved</p>
+                <h3 id="info">Click here to learn more</h3>
+            </div>
+        </section>
+        <!--separator image-->
+        <section id="messageSection">
+            <img src="{% static 'home/images/AdobeStock_335114620.jpeg' %}" alt="">
+            <img src="{% static 'home/images/AdobeStock_136081937.jpeg' %}" alt="">
+            <img src="{% static 'home/images/AdobeStock_212273093.jpeg' %}" alt="">
+        </section>
 
+        <!--Committee page-->
+        <section id="committeePage">
+            <div class="container">
+                <div class="section_title">
+                    <h3>Meet our Team</h3>
+                </div>
+                <div id="head-leaders">
+                    <div class="bg-user-card">
+                        <div>
+                            <img src="{% static 'home/images/mona.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Mona Denis</h4>
+                            <h6>Founder - Pastor - chairwoman
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="bg-user-card">
+                        <div>
+                            <img src="{% static 'home/images/gaston.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Gaston Maurice</h4>
+                            <h6>Vice-Chairman - Pastor</h6>
+                        </div>
+                    </div>
+                </div>
+                <div id="committee">
+                    <div class="user-card">
+                        <div>
+                            <img src="{% static 'home/images/natacha.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Natacha Mongeois</h4>
+                            <h6>President - Pastor</h6>
+                        </div>
+                    </div>
+                    <div class="user-card">
+                        <div>
+                            <img src="{% static 'home/images/itanie.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Itanie Pierre</h4>
+                            <h6>Vice-President</h6>
+                        </div>
+                    </div>
+                    <div class="user-card">
+                        <div>
+                            <img src="{% static 'home/images/maguy.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Magguy Dayan</h4>
+                            <h6>Treasurer</h6>
+                        </div>
+                    </div>
+                    <div class="user-card">
+                        <div>
+                            <img src="{% static 'home/images/gaston.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Rebecca St-Felix</h4>
+                            <h6>Secretary</h6>
+                        </div>
+                    </div>
+                    <div class="user-card">
+                        <div>
+                            <img src="{% static 'auth0login/images/Unknown_icon.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Claire Dayan</h4>
+                            <h6>Secretary Assistant</h6>
+                        </div>
+                    </div>
+                    <div class="user-card">
+                        <div>
+                            <img src="{% static 'home/images/jerry23.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Jerry Maurice</h4>
+                            <h6>Spokeperson</h6>
+                        </div>
+                    </div>
+                    <div class="user-card">
+                        <div>
+                            <img src="{% static 'auth0login/images/Unknown_icon.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Jonathan Maurice</h4>
+                            <h6>Delegate</h6>
+                        </div>
+                    </div>
+                    <div class="user-card">
+                        <div>
+                            <img src="{% static 'auth0login/images/Unknown_icon.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Velouse Laguerre</h4>
+                            <h6>Event Coordinator</h6>
+                        </div>
+                    </div>
+                    <div class="user-card">
+                        <div>
+                            <img src="{% static 'home/images/anne_marie.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Anne Marie Mongeois</h4>
+                            <h6>Advisor</h6>
+                        </div>
+                    </div>
+                    <div class="user-card">
+                        <div>
+                            <img src="{% static 'home/images/julia.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Julia Charles</h4>
+                            <h6>Advisor</h6>
+                        </div>
+                    </div>
+                    <div class="user-card">
+                        <div>
+                            <img src="{% static 'auth0login/images/Unknown_icon.png' %}" id="" class="" alt="">
+                        </div>
+                        <div>
+                            <h4>Patrick St. Felix</h4>
+                            <h6>Advisor</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--separator image
+        <section class="separatorSection"  data-parallax="scroll" data-image-src="{% static 'home/images/200276264_2891978794384515_1197964659757229212_n.jpg' %}">
+        </section>-->
+        <div id="eventsPage" data-parallax="scroll" data-image-src="{% static 'auth0login/images/AdobeStock_392771822.jpeg' %}">
+            <div class="container">
+                <div class="section_title">
+                    <h3>Upcoming Events</h3>
+                </div>
+                <div class="event-list">
+                    {% for event in events %}
+                        <div>
+                            <a href="{% url 'event_detail' event.id %}"><img src="{{event.imagePoster}}" alt="{{event.name}}" height="300"></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div id="contactSection">
+            <div class="container">
+                <div class="section_title">
+                    <h3>Contact Us</h3>
+                </div>
+                <form class="contact-form">
+                    <div>
+                        <label>Name</label>
+                        <input type="email" name="email">
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input type="email" name="email">
+                    </div>
+                    <div>
+                        <label>Message</label>
+                        <textarea></textarea>
+                    </div>
+                    <div>
+                        <button class="btn-default" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
 {% endblock %}
 
 {% block footer %}
-
+    {% include "essentials/footer.html" %}
 {% endblock %}
 
 {% block js %}
     <script src="{% static 'essentials/js/navigation.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 {% endblock %}
