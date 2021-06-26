@@ -1,6 +1,45 @@
 /*
 event
 */
+.message .welcome-title{
+	text-align: center;
+	padding: 40px 0 0px;
+	font-family: acme-gothic,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2.5em;
+}
+.message .welcome-title span{
+	font-family: nautica,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #740000;
+}
+.message .about-text{
+	font-family: monarcha, serif;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 20px;
+	text-align: center;
+	width: 300px;
+	margin: 50px auto;
+	padding: 10px;
+}
+.underline{
+	border-bottom: 3px solid #3B0000;
+	width: 500px;
+	margin: 0 auto;
+}
+.message .welcome-subtitle{
+	text-align: center;
+	padding: 40px 0 0px;
+	font-family: acme-gothic,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2em;
+	color: #740000;
+}
+
 .event-list{
 	display: flex;
 	flex-direction: column;

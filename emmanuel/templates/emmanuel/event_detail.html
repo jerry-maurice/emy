@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'navigation/navigation.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'footer/footer.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/home.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/event.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'essentials/css/navigation.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'essentials/css/footer.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/event.css' %}">
 {% endblock %}
 {% block header %}
-    {% include "navigation/navigation.html" %}
+    {% include "essentials/navigation.html" %}
 {% endblock %}
 {% block content %}
 <main>
