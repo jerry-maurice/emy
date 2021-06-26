@@ -23,6 +23,7 @@ for(let i=0;i<navItemLength;i++){
         else{
             //redirect to member page if authenticated
             //window.location.href = '/login/auth0';
+            window.location.href = '/member/home';
         }
         
     })

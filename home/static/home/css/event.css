@@ -9,6 +9,29 @@ event
 	justify-content: center;
     align-items: center;
 }
+
+.list-summary-event{
+	display: flex;
+	flex-direction: column;
+}
+.event-group{
+	padding: 5px 10px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	border-bottom: 1px solid #740000;
+	cursor: pointer;
+}
+.event-group:hover{
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.event-group img{
+	height:50px;
+}
+.event-group p{
+	width: 300px;
+}
 /*medium screen*/
 @media (min-width:600px) and (max-width:900px){
 	

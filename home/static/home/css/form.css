@@ -199,3 +199,13 @@ contact form
     text-align: center;
     font-style: italic;
 }
+/*
+* social
+*/
+.social-form{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}

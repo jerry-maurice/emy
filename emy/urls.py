@@ -22,6 +22,7 @@ urlpatterns = [
     path('contest/', include('contest.urls')),
     # path('', include('emmanuel.urls')),
     path('', include('home.urls')),
+    path('member/', include('memberApp.urls')),
     path('events/', include('event.urls')),
     path('notification/', include('notification.urls')),
     path('library/', include('mediaApp.urls'))

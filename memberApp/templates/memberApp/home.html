@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+{% load activity_tags %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'essentials/css/navigation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'memberApp/css/member.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/event.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/form.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/button.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/card.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'essentials/css/footer.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'streamapp/css/tweet.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+{% block header %}
+    <!-- navigation -->
+    {% include "essentials/navigation.html" %}
+{% endblock %}
+{% block content %}
+    <main>
+        <div class="social-layout">
+            <div class="left-side">
+                <div class="card profile-card">
+                    <img class="is-rounded" src="{{member.image.url}}">
+                    <p>{{member.about}}</p>
+                </div>
+                <div class="card">
+                    
+                </div>
+            </div>
+            <div class="center-side">
+                <div class="card">
+                    <form class="social-form" method="POST" action="{% url 'member' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div>
+                            <figure class="image is-64x64">
+                                <img class="is-rounded" src="{{member.image.url}}">
+                            </figure>
+                        </div>
+                        <div>
+                            <input class="input is-rounded is-normal" type="text" name='postFeed' placeholder="Say Something">
+                        </div>
+                        <div class="" id="">
+                            <label for="postFeedImage"><img src="https://img.icons8.com/fluent/48/000000/add-image.png"/></label>
+                            <input type="file" name="postFeedImage" id="postFeedImage" class="post-file">
+                        </div>
+                        <div>
+                            <button type="submit" class="button is-rounded is-danger is-outlined">Share</button>
+                        </div>
+                    </form>
+                    <div id="filename"></div>
+                </div>
+                <div class="">
+                    {% for activity in activities %}
+                        {% render_activity activity %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="card">
+                    <div class="card-header">
+                        <p class="card-header-title">Upcoming Events</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="list-summary-event">
+                            {% for event in events %}
+                            <div class="event-group">
+                                <p>{{event.name}}</p>
+                                <img class="is-rounded" src="{{event.imagePoster}}">
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'essentials/js/navigation.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+    <script>
+        const inputFile = document.getElementById('postFeedImage');
+        const fileName = document.getElementById('filename');
+        inputFile.addEventListener('change',(event)=>{
+            let filetext = document.createElement('p');
+            filetext.textContent = inputFile.files[0].name;
+            if(fileName.firstChild){
+                fileName.removeChild(fileName.firstChild);
+            }
+            fileName.appendChild(filetext);
+        });
+    </script>
+{% endblock %}

@@ -3,6 +3,11 @@
   <nav class="navbar">
     <a href="" class="nav-logo"><img src="{% static 'essentials/images/emy_logo.png' %}"></a>
     <ul class="nav-menu">
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+      </li>
+      {% else %}
       <li class="nav-item">
         <a class="nav-link">Home</a>
       </li>
@@ -21,6 +26,7 @@
       <li class="nav-item">
         <a class="nav-link">Members</a>
       </li>
+      {% endif %}
     </ul>
   </nav>
   <div class="hamburger">

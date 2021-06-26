@@ -9,13 +9,15 @@ from urllib.parse import urlencode
 from emmanuel.views import home, user_home
 from event.models import Event, Agenda
 
+from memberApp.views import memberHome
+
 
 # Create your views here.
 
 def index(request):
     user = request.user
     if user.is_authenticated:
-        return redirect(user_home)
+        return redirect(memberHome)
     else:
         events = Event.objects.all().filter(isActive=True)
         context = {

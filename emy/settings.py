@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'notification',
     'mediaApp',
     'home',
+    'memberApp',
 ]
 
 MIDDLEWARE = [
@@ -208,7 +209,7 @@ SESSION_SAVE_EVERY_REQUEST = True
 
 
 LOGIN_URL = '/login/auth0'
-LOGIN_REDIRECT_URL = '/profile'
+LOGIN_REDIRECT_URL = '/member/home'
 LOGOUT_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django_ses.SESBackend'

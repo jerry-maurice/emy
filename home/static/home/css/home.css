@@ -202,31 +202,7 @@
     flex-wrap: wrap;
 }
 
-.user-card{
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    height: 250px;
-    width: 200px;
-}
-.user-card{
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    margin:20px 5px;
-}
-.user-card div img{
-    height: 150px;
-    margin-top: 10px;
-    padding: 10px;
-}
-.user-card div h4{
-    font-size: 1.1em;
-    text-align: center;
-    margin:20px 0 5px;
-}
-.user-card div h6{
-    font-size: 12px;
-    text-align: center;
-}
+
 /*
 * separator section
 */
