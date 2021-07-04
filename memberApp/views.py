@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 
 from event.models import Event
-from account.models import Member
+from memberApp.models import Member
 from streamapp.models import Tweet, Item, Follow
 
 from stream_django.enrich import Enrich
@@ -21,20 +21,25 @@ logger = logging.getLogger(__name__)
 def memberHome(request):
     user = request.user
     if request.method == 'GET':
-        account = get_object_or_404(Member, user=user)
-        feeds = feed_manager.get_news_feeds(user.id)
-        #notification_feeds = feed_manager.get_notification_feed(user.id)
-        #logger.info(notification_feeds.get('notification').get()['results'])
-        activities = feeds.get('timeline').get()['results']
-        enriched_activities = enricher.enrich_activities(activities)
-        # notification = Notification.objects.all().order_by('-id')[:10]
-        context = {
-            'activities':enriched_activities,
-            'member':account,
-            'events':Event.objects.all().filter(isActive=True),
-            'members':Member.objects.all()
-        }
-        return render(request, 'memberApp/home.html',context)
+        if Member.objects.filter(user=user).exists():
+            account = get_object_or_404(Member, user=user)
+            feeds = feed_manager.get_news_feeds(user.id)
+            #notification_feeds = feed_manager.get_notification_feed(user.id)
+            #logger.info(notification_feeds.get('notification').get()['results'])
+            activities = feeds.get('timeline').get()['results']
+            enriched_activities = enricher.enrich_activities(activities)
+            # notification = Notification.objects.all().order_by('-id')[:10]
+            context = {
+                'activities':enriched_activities,
+                'member':account,
+                'events':Event.objects.all().filter(isActive=True),
+                'members':Member.objects.all()
+            }
+            return render(request, 'memberApp/home.html',context)
+        else:
+            return redirect(member_registration)
+
+        
     if request.method == 'POST':
         videos = ['avi','mp4','mov','wmv','MP4','AVI','MOV', 'WMV']
         textFeed = None
@@ -56,3 +61,30 @@ def memberHome(request):
         tweet = Tweet(author=user,text=textFeed, image=imageFeed, is_video=checkVideo)
         tweet.save()
         return redirect(memberHome)
+
+
+# member registration
+def member_registration(request):
+    user = request.user
+    if request.method == 'GET':
+        return render(request, 'memberApp/member_registration.html')
+    if request.method == 'POST':
+        firstName = request.POST['firstName']
+        lastName = request.POST['lastName']
+        dob = request.POST['dateOfBirth']
+        phoneNumber = request.POST['memberNumber']
+        about = request.POST["memberAbout"]
+
+        user.first_name = firstName
+        user.last_name = lastName
+        user.save()
+
+        if (request.FILES):
+            memberPicture = request.FILES['memberPicture']
+            member = Member(user=user, image=memberPicture, dateofbirth=dob, phone=phoneNumber, about=about)
+            member.save()
+        else:
+            member = Member(user=user, dateofbirth=dob, phone=phoneNumber, about=about)
+            member.save()
+        return redirect(memberHome)
+

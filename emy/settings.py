@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'mediaApp',
     'home',
     'memberApp',
+    'phone_field',
 ]
 
 MIDDLEWARE = [

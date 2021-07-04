@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% load activity_tags %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'essentials/css/navigation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'memberApp/css/member.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/event.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/form.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/button.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/card.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'essentials/css/footer.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'streamapp/css/tweet.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+{% block header %}
+    <!-- navigation -->
+    {% include "essentials/navigation.html" %}
+{% endblock %}
+{% block content %}
+    <main>
+        <div class="">
+            <div class="section_title">
+                <h3>Member Registration</h3>
+            </div>
+            <div id="registrationForm" class="card">
+                <div class="card-header">
+                    <p class="card-header-title">Please Fill out this form</p>
+                </div>
+                <div class="card-content">
+                    <form action="{% url 'memberRegistration' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="field">
+                            <label class="label">First Name</label>
+                            <div class="control">
+                                <input required class="input" type="text" name="firstName" placeholder="Enter First Name">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Last Name</label>
+                            <div class="control">
+                                <input required class="input" name="lastName" type="text" placeholder="Enter Last Name">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Date of Birth</label>
+                            <div class="control">
+                                <input required class="input datetime-picker" name="dateOfBirth" type="date" placeholder="Email input">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Phone Number</label>
+                            <div class="control">
+                                <input required class="input" name="memberNumber" type="tel" placeholder="Enter Phone Number">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Picture</label>
+                            <div class="control">
+                                <input class="input" name="memberPicture" type="file" placeholder="Upload File">
+                            </div>
+                        </div>
+                            
+                        <div class="field">
+                            <label class="label">Message</label>
+                            <div class="control">
+                                <textarea required class="textarea" name="memberAbout" placeholder="Tell us about you"></textarea>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox">
+                                <input type="checkbox">
+                                I agree to the <a href="#">terms and conditions</a>
+                                </label>
+                            </div>
+                        </div>-->
+                            
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-link">Submit</button>
+                            </div>
+                            <div class="control">
+                                <button type="reset" class="button is-link is-light">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'essentials/js/navigation.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+    
+{% endblock %}

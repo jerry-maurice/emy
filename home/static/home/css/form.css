@@ -209,3 +209,10 @@ contact form
     align-items: center;
     align-content: center;
 }
+
+/*
+registration form
+*/
+#registrationForm{
+    width: 600px;
+}

@@ -5,10 +5,12 @@ from django.contrib.auth import logout as log_out
 from django.conf import settings
 from django.http import HttpResponseRedirect
 from urllib.parse import urlencode
+from django.shortcuts import get_object_or_404
+
+from event.models import Event, Agenda
+from memberApp.models import Member
 
 from emmanuel.views import home, user_home
-from event.models import Event, Agenda
-
 from memberApp.views import memberHome
 
 
