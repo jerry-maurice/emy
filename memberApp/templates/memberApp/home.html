@@ -35,7 +35,7 @@
                     <form class="social-form" method="POST" action="{% url 'member' %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div>
-                            <figure class="image is-64x64">
+                            <figure class="image is-32x32">
                                 <img class="is-rounded" src="{{member.image.url}}">
                             </figure>
                         </div>
