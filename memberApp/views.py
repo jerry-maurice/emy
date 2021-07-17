@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.models import User
 
 from event.models import Event
 from memberApp.models import Member
@@ -86,5 +87,12 @@ def member_registration(request):
         else:
             member = Member(user=user, dateofbirth=dob, phone=phoneNumber, about=about)
             member.save()
+        # follow self 
+        follow = Follow(user=user, target=user)
+        follow.save()
+        # follow main user
+        if User.objects.get(email='emmanuelmaranathayouth@gmail.com').exists():
+            follow_priority = Follow(user=user,target=get_object_or_404(User,email='emmanuelmaranathayouth@gmail.com'))
+            follow_priority.save()
         return redirect(memberHome)
 

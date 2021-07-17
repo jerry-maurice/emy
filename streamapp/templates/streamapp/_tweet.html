@@ -1,4 +1,5 @@
 {% load filters %}
+{% load static %}
 <div class="card">
   <div class="card-header-tweet">
     <p><a href="/user/{{ tweet.user.username }}">{{ tweet.author.first_name }}</a></p>
@@ -21,17 +22,27 @@
         {% endif %}
       {% endif %}
     </div>
-    <div class="social-intterraction">
-        <div>
-          <i onclick="alert('working')"; class="fa fa-thumbs-up"> <b>0</b> Like</i>
-        </div>
-        <div>
-          <i onclick="alert('working')"; class="fa fa-comment"> <b>0</b> comment</i>
-        </div>
-        <div>
-            <i onclick="addComment(this,`{{tweet.id}}`)"; class="fa fa-plus"> new comment</i>
-        </div>
-    </div>
+    <a href="{% url 'interraction' tweet.id %}">
+      <div class="social-intterraction">
+          <div>
+            <i class="fa fa-thumbs-up">Like</i>
+          </div>
+          <div>
+            <i class="fa fa-comment"> comment</i>
+          </div>
+        <!--
+          <div>
+            <i onclick="addLike({{tweet.id}})"; class="fa fa-thumbs-up"> <b class="numberLikes"></b> Like</i>
+          </div>
+          <div>
+            <i onclick="alert('working')"; class="fa fa-comment"> <b>0</b> comment</i>
+          </div>
+          <div>
+              <i onclick="addComment(this,`{{tweet.id}}`)"; class="fa fa-plus"> new comment</i>
+          </div>
+        -->
+      </div>
+    </a>
     {% endautoescape %}
   </div>
 </div>
@@ -45,6 +56,8 @@
       //box.classList.add('hideDiv');
       box.style.display = "none";
     }
+
+    
   });
   //adding comment
   function addComment(element,id){

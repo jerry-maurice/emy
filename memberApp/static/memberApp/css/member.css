@@ -15,8 +15,19 @@
     width:300px;
 }
 
+.right-group-side{
+    width:500px;
+    margin:0 auto;
+}
+.left-group-side{
+    width:500px;
+    margin:0 auto;
+}
 .post-time{
     padding:10px;
+}
+.new-comment-hide{
+    display:none;
 }
 
 /* profile card */
@@ -32,7 +43,10 @@
     font-size: 15px;
     text-align: center;
 }
-
+#comment-list{
+    height:800px;
+    overflow-y: scroll;
+}
 /*medium screen*/
 @media (min-width:600px) and (max-width:900px){
 }
@@ -55,5 +69,13 @@
     }
     .right-side{
         width:300px;
+    }
+    .right-group-side{
+        width:500px;
+        margin:0 auto;
+    }
+    .left-group-side{
+        width:500px;
+        margin:0 auto;
     }
 }

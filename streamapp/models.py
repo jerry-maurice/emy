@@ -43,7 +43,30 @@ class Tweet(models.Model, Activity):
             return [target_feed]'''
 
 
-#class Like(models.Model, Activity):
+class Comment(models.Model):
+    '''
+    user can comment on other user message
+    '''
+    created_at = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField(blank=True, null=True)
+    tweet = models.ForeignKey(Tweet, on_delete=models.CASCADE, null=False)
+
+    def __str__(self):
+        return self.author +" - "+ self.text
+
+
+class Like(models.Model):
+    '''
+    user can add like
+    '''
+    created_at = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    like = models.IntegerField(default=0, null=False, blank=True)
+    tweet = models.ForeignKey(Tweet, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "" +self.like
     
 
 

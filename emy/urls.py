@@ -25,5 +25,6 @@ urlpatterns = [
     path('member/', include('memberApp.urls')),
     path('events/', include('event.urls')),
     path('notification/', include('notification.urls')),
+    path('social/', include('streamapp.urls')),
     path('library/', include('mediaApp.urls'))
 ]

@@ -27,7 +27,9 @@
                     <p>{{member.about}}</p>
                 </div>
                 <div class="card">
-                    
+                    <div class="card-header">
+                        <p class="card-header-title">Other EMY Members</p>
+                    </div>
                 </div>
             </div>
             <div class="center-side">
@@ -84,6 +86,7 @@
 
 {% block js %}
     <script src="{% static 'essentials/js/navigation.js' %}"></script>
+    <script src="{% static 'memberApp/js/social.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
     <script>
