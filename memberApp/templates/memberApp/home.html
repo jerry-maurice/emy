@@ -30,6 +30,13 @@
                     <div class="card-header">
                         <p class="card-header-title">Other EMY Members</p>
                     </div>
+                    <div class="card-content"> 
+                        <ul class="menu-list">
+                            {% for member in members%}
+                            <li><a>{{member}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="center-side">
