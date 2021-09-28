@@ -1,255 +1,454 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'essentials/css/navigation.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/event.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/form.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/button.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/card.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'essentials/css/footer.css' %}">
-{% endblock %}
 {% block header %}
     <!-- navigation -->
     {% include "essentials/navigation.html" %}
 {% endblock %}
 {% block content %}
-    <main>
-        <!--Home page-->
-        <section id="homePage" data-parallax="scroll" data-image-src="{% static 'home/images/emy_members.jpg' %}">
-            <div class="quotation">
-                <p class="quote">Young men be strong, keep God's word in your hearts, you have power over the devil</p>
-                <p class="author">1 John 2:14</p>
-            </div>
-        </section>
-        <!--About page-->
-        <section id="aboutPage">
-            <div class="container">
-                <div class="page_title">
-                    <p class="welcome-title">Emmanuel Maranatha <span>Youth</span></p>
-                </div>
-                <div id="aboutContent">
-                    <div id="aboutText">
-                        <p class="aboutText">
-                            Emmanuel Maranatha Youth, <abbr title="Emmanuel Maranatha Youth">"EMY"</abbr>, is a prayer group whose goal is to raise up a legacy of young people who has the capacity to learn, to follow the Word of God and to be empowered by the Holy Spirt who will help them understand and recognize who Jesus is. He will also help them fulfill the real purpose of their calling.<br />
-                            Our objective is to respond to the Social and Spiritual needs of the youth by providing relative programs, activities, and events that will allow them to build a strong foundation of faith that will enable them to express and share their faith and to use their talent in order to grow as children of God
-                        </p>
-                    </div>
-                    <div id="aboutImage">
-                        <img class="sectionImage" src="{% static 'home/images/zumilda_betou.png' %}" id="">
-                    </div>
-                </div>
-                <div id="motto">
-                    <p>Loving</p>
-                    <p>Helping</p>
-                    <p>Serving</p>
-                </div>
-            </div>
-        </section>
-        <!--Committee page-->
-        <section id="involvedPage">
-            <div id="getInvolved" class="container" data-parallax="scroll" data-image-src="{% static 'home/images/joinemy.jpeg' %}">
-                <p id="">Get Involved</p>
-                <h3 id="info">Click here to learn more</h3>
-            </div>
-        </section>
-        <!--separator image-->
-        <section id="messageSection">
-            <img src="{% static 'home/images/AdobeStock_335114620.jpeg' %}" alt="">
-            <img src="{% static 'home/images/AdobeStock_136081937.jpeg' %}" alt="">
-            <img src="{% static 'home/images/AdobeStock_212273093.jpeg' %}" alt="">
-        </section>
+<!-- Intro -->
+<section id="intro" class="intro">
+	<!-- Static Intro -->
+	<div class="bg-image overlay-dark40 dark-bg parallax parallax-background2" data-background-img="{% static 'home/images/emy_members.jpg' %}">
+	<div class="js-fullscreen-height container">
+		<div class="intro-content">
+		<div class="intro-content-inner">
+			<h5 class="alt-title intro-sub-title">To raise a legacy of young christian</h5>
+			<h1 class="intro-title mb-50">Emmanuel Maranatha Youth</h1>
+			<a href="#about" class="btn btn-white-outline btn-lg scroll-down">Learn More</a> </div>
+		</div>
+	</div>
+	</div>
+	<!-- End Static Intro -->
+</section>
 
-        <!--Committee page-->
-        <section id="committeePage">
-            <div class="container">
-                <div class="section_title">
-                    <h3>Meet our Team</h3>
-                </div>
-                <div id="committee">
-                    <div class="user-card">
-                        <div>
-                            <img src="{% static 'home/images/natacha.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Natacha Mongeois</h4>
-                            <h6>Chairwoman - Pastor</h6>
-                        </div>
-                    </div>
-                    <div class="user-card">
-                        <div>
-                            <img src="{% static 'home/images/itanie.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Itanie Pierre</h4>
-                            <h6>Vice-Chairewoman</h6>
-                        </div>
-                    </div>
-                    <div class="user-card">
-                        <div>
-                            <img src="{% static 'home/images/maguy.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Magguy Dayan</h4>
-                            <h6>Treasurer</h6>
-                        </div>
-                    </div>
-                    <div class="user-card">
-                        <div>
-                            <img src="{% static 'auth0login/images/Unknown_icon.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Rebecca St-Felix</h4>
-                            <h6>Secretary</h6>
-                        </div>
-                    </div>
-                    <div class="user-card">
-                        <div>
-                            <img src="{% static 'auth0login/images/Unknown_icon.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Claire Dayan</h4>
-                            <h6>Secretary Assistant</h6>
-                        </div>
-                    </div>
-                    <div class="user-card">
-                        <div>
-                            <img src="{% static 'home/images/jerry.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Jerry Maurice</h4>
-                            <h6>Spokeperson</h6>
-                        </div>
-                    </div>
-                    <div class="user-card">
-                        <div>
-                            <img src="{% static 'auth0login/images/Unknown_icon.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Jonathan Maurice</h4>
-                            <h6>Delegate</h6>
-                        </div>
-                    </div>
-                    <div class="user-card">
-                        <div>
-                            <img src="{% static 'auth0login/images/Unknown_icon.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Velouse Laguerre</h4>
-                            <h6>Event Coordinator</h6>
-                        </div>
-                    </div>
-                    <div class="user-card">
-                        <div>
-                            <img src="{% static 'home/images/anne_marie.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Anne Marie Mongeois</h4>
-                            <h6>Advisor</h6>
-                        </div>
-                    </div>
-                    <div class="user-card">
-                        <div>
-                            <img src="{% static 'home/images/julia.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Julia Charles</h4>
-                            <h6>Advisor</h6>
-                        </div>
-                    </div>
-                    <div class="user-card">
-                        <div>
-                            <img src="{% static 'auth0login/images/Unknown_icon.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Patrick St. Felix</h4>
-                            <h6>Advisor</h6>
-                        </div>
-                    </div>
-                    <div class="user-card">
-                        <div>
-                            <img src="{% static 'auth0login/images/Unknown_icon.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Zurmilda St. Felix</h4>
-                            <h6>Advisor</h6>
-                        </div>
-                    </div>
-                </div>
-                <div id="head-leaders">
-                    <div class="bg-user-card">
-                        <div>
-                            <img src="{% static 'home/images/mona.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Mona Denis</h4>
-                            <h6>Founder - Pastor - President
-                            </h6>
-                        </div>
-                    </div>
-                    <div class="bg-user-card">
-                        <div>
-                            <img src="{% static 'home/images/gaston.png' %}" id="" class="" alt="">
-                        </div>
-                        <div>
-                            <h4>Gaston Maurice</h4>
-                            <h6>Vice-President - Pastor</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--separator image
-        <section class="separatorSection"  data-parallax="scroll" data-image-src="{% static 'home/images/200276264_2891978794384515_1197964659757229212_n.jpg' %}">
-        </section>-->
-        <div id="eventsPage" data-parallax="scroll" data-image-src="{% static 'auth0login/images/AdobeStock_392771822.jpeg' %}">
-            <div class="container">
-                <div class="section_title">
-                    <h3>Upcoming Events</h3>
-                </div>
-                <div class="event-list">
-                    {% for event in events %}
-                        <div>
-                            <a href="{% url 'event_detail' event.id %}"><img src="{{event.imagePoster}}" alt="{{event.name}}" height="300"></a>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
+<!-- About Section -->
+<section id="about" class="section-padding">
+	<div class="container text-center mb-60">
+	<h1>About us</h1>
+	<p class="lead-lg max-width-700">Emmanuel Maranatha Youth, "EMY", is a prayer group whose goal is to raise up a legacy of young people who has the capacity to learn, to follow the Word of God and to be empowered by the Holy Spirt who will help them understand and recognize who Jesus is. He will also help them fulfill the real purpose of their calling.
+        Our objective is to respond to the Social and Spiritual needs of the youth by providing relative programs, activities, and events that will allow them to build a strong foundation of faith that will enable them to express and share their faith and to use their talent in order to grow as children of God</p>
+	</div>
+	<div class="container text-center">
+	<div class="row">
+        <div class="col-md-3 content-box mb-sm-45">
+            <div class="alt-icon-top icon-gray"> <i class="icon-heart"></i> </div>
+            <h4 class="alt-title">Love</h4>
+            <p></p>
         </div>
-        <div id="contactSection">
-            <div class="container">
-                <div class="section_title">
-                    <h3>Contact Us</h3>
-                </div>
-                <form class="contact-form">
-                    <div>
-                        <label>Name</label>
-                        <input type="email" name="email">
-                    </div>
-                    <div>
-                        <label>Email</label>
-                        <input type="email" name="email">
-                    </div>
-                    <div>
-                        <label>Message</label>
-                        <textarea></textarea>
-                    </div>
-                    <div>
-                        <button class="btn-default" type="submit">Submit</button>
-                    </div>
-                </form>
-            </div>
+        <div class="col-md-3 content-box mb-sm-45">
+            <div class="alt-icon-top icon-gray"> <i class="icon-toolbox"></i> </div>
+            <h4 class="alt-title">Helping</h4>
+            <p></p>
         </div>
-    </main>
+        <div class="col-md-3 content-box">
+            <div class="alt-icon-top icon-gray"> <i class="icon-global"></i> </div>
+            <h4 class="alt-title">Serving</h4>
+            <p></p>
+        </div>
+		<div class="col-md-3 content-box">
+            <div class="alt-icon-top icon-gray"> <i class="icon-book-open"></i> </div>
+            <h4 class="alt-title">Praying</h4>
+            <p></p>
+        </div>
+	</div>
+	</div>
+</section>
+<!-- End About Section -->
+
+<!-- Skills Section -->
+<section id="skills" class="section-padding pos-section gray-bg bg-image overlay-light" data-stellar-background-ratio="0.4" data-background-img="{% static 'home/images/joinemy.jpeg' %}">
+	<!-- page triangle shape -->
+	<div class="page-triangle white-bg"></div>
+	<!-- End page triangle shape -->
+	<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+		</div>
+		<div class="col-md-6">
+		</div>
+	</div>
+	</div>
+</section>
+<!-- End Skills Section -->
+<!-- Team Section -->
+<section id="team" class="section-padding">
+	<div class="container text-center">
+	<h1>Meet Our Team</h1>
+	<p class="lead-lg max-width-700 mb-60">"Alone we can do so little; together we can do so much." - Helen Keller</p>
+	</div>
+	<div class="container">
+        <div class="rows">
+            <!--Team Carousel -->
+            <div class="owl-carousel team-carousel nf-carousel-theme">
+                <div class="item">
+                    <div class="team-item">
+                    <div class="team-item-img"> <img src="http://placehold.it/700x700" alt="" />
+                        <div class="team-item-detail">
+                        <div class="team-item-detail-inner light-color">
+                            <ul class="social">
+                            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="team-item-info">
+                        <h5 class="alt-title">Natacha Mongeois</h5>
+                        <p class="">President</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="team-item">
+                    <div class="team-item-img"> <img src="http://placehold.it/700x700" alt="" />
+                        <div class="team-item-detail">
+                        <div class="team-item-detail-inner light-color">
+                            <ul class="social">
+                            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="team-item-info">
+                        <h5 class="alt-title">Itanie Pierre</h5>
+                        <p class="">Vice-President</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="team-item">
+                    <div class="team-item-img"> <img src="http://placehold.it/700x700" alt="" />
+                        <div class="team-item-detail">
+                        <div class="team-item-detail-inner light-color">
+                            <ul class="social">
+                            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="team-item-info">
+                        <h5 class="alt-title">Rebecca St-Felix</h5>
+                        <p class="">Secretary</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="team-item">
+                    <div class="team-item-img"> <img src="http://placehold.it/700x700" alt="" />
+                        <div class="team-item-detail">
+                        <div class="team-item-detail-inner light-color">
+                            <ul class="social">
+                            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="team-item-info">
+                        <h5 class="alt-title">Claire Dayan</h5>
+                        <p class="">Secretary Adjoint</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="team-item">
+                    <div class="team-item-img"> <img src="http://placehold.it/700x700" alt="" />
+                        <div class="team-item-detail">
+                        <div class="team-item-detail-inner light-color">
+                            <ul class="social">
+                            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="team-item-info">
+                        <h5 class="alt-title">Jerry Maurice</h5>
+                        <p class="">Spokeperson</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="team-item">
+                    <div class="team-item-img"> <img src="http://placehold.it/700x700" alt="" />
+                        <div class="team-item-detail">
+                        <div class="team-item-detail-inner light-color">
+                            <ul class="social">
+                            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="team-item-info">
+                        <h5 class="alt-title">Jonathan Maurice</h5>
+                        <p class="">Deleguate</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="team-item">
+                    <div class="team-item-img"> <img src="http://placehold.it/700x700" alt="" />
+                        <div class="team-item-detail">
+                        <div class="team-item-detail-inner light-color">
+                            <ul class="social">
+                            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="team-item-info">
+                        <h5 class="alt-title">Maguy Dayan</h5>
+                        <p class="">Tresaurer</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="team-item">
+                    <div class="team-item-img"> <img src="http://placehold.it/700x700" alt="" />
+                        <div class="team-item-detail">
+                        <div class="team-item-detail-inner light-color">
+                            <ul class="social">
+                            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="team-item-info">
+                        <h5 class="alt-title"></h5>
+                        <p class="">Tresaurer</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Team Carousel --->
+        </div>
+        
+	</div>
+</section>
+<!-- End Team Section -->
+<!-- verses Section -->
+<section id="testimonials" class="section-padding bg-image dark-bg pos-section overlay-dark" data-stellar-background-ratio="0.4" data-background-img="{% static 'home/images/AdobeStock_195909368.jpeg' %}">
+	<!-- page triangle shape -->
+	<div class="page-triangle white-bg"></div>
+	<!-- End page triangle shape -->
+	<div class="container">
+	<div class="owl-carousel testimonial-carousel nf-carousel-theme white">
+		<div class="item">
+		<div class="testimonial text-center max-width-700">
+			<div class="page-icon-sm"><i class="icon-quote"></i></div>
+			<h2>For God so loved the world, that he gave his only begotten Son, that whosoever believed in him should not perish, but have everlasting life</h2>
+			<p class="lead-lg"></p>
+			<h6 class="quote-author alt-title">John <span class="text-regular">3:16</span></h6>
+		</div>
+		</div>
+		<div class="item">
+		<div class="testimonial text-center max-width-700">
+			<div class="page-icon-sm"><i class="icon-quote"></i></div>
+			<h2>For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future.</h2>
+			<p class="lead-lg"></p>
+			<h6 class="quote-author alt-title">Jeremiah <span class="text-regular">29:11</span></h6>
+		</div>
+		</div>
+		<div class="item">
+		<div class="testimonial text-center max-width-700">
+			<div class="page-icon-sm"><i class="icon-quote"></i></div>
+			<h2>What People Say?</h2>
+			<p class="lead-lg">TBD</p>
+			<h6 class="quote-author alt-title">Adam Savage <span class="text-regular">( Artist )</span></h6>
+		</div>
+		</div>
+	</div>
+	</div>
+</section>
+<!-- End Testimonials Section -->
+<!-- Pricing Section -->
+<section id="pricing" class="section-padding">
+	<div class="container text-center">
+	<h1 class="mb-60">Upcoming Events</h1>
+	<div class="row">
+		
+		<div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.1s">
+		<!--
+		<div class="pricing-box">
+			<div class="pricing-title">
+			<h5 class="alt-title">Regular</h5>
+			</div>
+			<div class="pricing-price">
+			<p> <span class="dollar">$</span> <span class="pricing-price-lg">2.99</span> <span class="pricing-price-sm">/ mo</span> </p>
+			</div>
+			<div class="pricing-features">
+			<ul>
+				<li>Full Access</li>
+				<li>1 Domain <strong>Free</strong></li>
+				<li>Source Files</li>
+				<li><strong>50 User Accounts</strong></li>
+				<li>6 Month License</li>
+				<li>Premium Support</li>
+			</ul>
+			</div>
+			<div class="pricing-button"> <a target="_blank" href="#" class="btn btn-md btn-color-outline"><i class="fa fa-user left"></i>Sign Up</a> </div>
+		</div>
+		-->
+		</div>
+		<div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+		<div class="pricing-box highlight">
+			<div class="pricing-title">
+			<h5 class="alt-title">No Upcoming</h5>
+			</div>
+			<div class="pricing-price">
+			<p> <span class="dollar"></span> <span class="pricing-price-lg">Event</span> <span class="pricing-price-sm"></span>at this moment </p>
+			</div>
+			<div class="pricing-features">
+				<!--
+			<ul>
+				<li>Full Access</li>
+				<li>10 Domain <strong>Free</strong></li>
+				<li>Source Files</li>
+				<li><strong>500 User Accounts</strong></li>
+				<li>6 Month License</li>
+				<li>Premium Support</li>
+			</ul>-->
+			</div>
+			<!--
+			<div class="pricing-button"> <a target="_blank" href="#" class="btn btn-md btn-color"><i class="fa fa-user left"></i>Sign Up</a> </div>-->
+		</div>
+		</div>
+		<div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.3s">
+			<!--
+		<div class="pricing-box">
+			<div class="pricing-title">
+			<h5 class="alt-title">Advanced</h5>
+			</div>
+			<div class="pricing-price">
+			<p> <span class="dollar">$</span> <span class="pricing-price-lg">4.99</span> <span class="pricing-price-sm">/ mo</span> </p>
+			</div>
+			<div class="pricing-features">
+			<ul>
+				<li>Full Access</li>
+				<li>100 Domain <strong>Free</strong></li>
+				<li>Source Files</li>
+				<li><strong>5000 User Accounts</strong></li>
+				<li>6 Month License</li>
+				<li>Premium Support</li>
+			</ul>
+			</div>
+			<div class="pricing-button"> <a target="_blank" href="#" class="btn btn-md btn-color-outline"><i class="fa fa-user left"></i>Sign Up</a> </div>
+		</div>
+-->
+		</div>
+	</div>
+	<div class="rows mt-30">Have a question?, Please contact for more information. <a class="scroll-down color" href="#contact-us"><b>Contact us</b></a></div>
+	</div>
+</section>
+<!-- End Pricing Section -->
+<!-- Newsletter Section -->
+<section id="newsletter" class="section-padding gray-bg pos-section">
+	<!-- page triangle shape -->
+	<div class="page-triangle white-bg"></div>
+	<!-- End page triangle shape -->
+	<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 text-center">
+		<form id="subscribe-form" role="form" action="/" method="post" novalidate="novalidate">
+			<h2 class="mb-30">Subscribe to Our Newsletter</h2>
+			<div class="form-field-wrapper">
+			<input type="text" class="newsletter-input input-lg mb-15 subscribe-form-control" placeholder="Name" name="subscribe-name" id="subscribe-name" />
+			<input type="email" class="newsletter-input input-lg form-full mb-15 subscribe-form-control required" placeholder="Email" name="subscribe-email" id="subscribe-email" aria-required="true" />
+			<button type="submit" class="btn btn-lg btn-black mb-15">Subscribe</button>
+			</div>
+			<p><i class="fa fa-info-circle"></i>&nbsp;Being the first to know always feels great, subscribe to be notifed.</p>
+		</form>
+		</div>
+	</div>
+	</div>
+</section>
+<!-- End Newsletter Section -->
+<!-- Contact Form Section -->
+<section id="contact-us" class="section-padding">
+	<div class="container text-center">
+	<h1>Contact Us</h1>
+	<p class="lead-lg max-width-700 mb-60">ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quia tempore rem quis iste saepe in omnis aspernatur eligendi asperiores.</p>
+	<!-- Contact form -->
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+		<form id="contact" class="contact-form row" role="form">
+			<div class="col-md-12 text-center">
+			<h5 class="successContent"> <i class="fa fa-check left" ></i>Your message has been sent successfully. </h5>
+			<h5 class="errorContent" > <i class="fa fa-exclamation-circle left"></i>There was a problem validating the form please check! </h5>
+			</div>
+			<div class="col-md-6">
+			<div class="form-field-wrapper">
+				<input class="input-lg form-full input-fancy" id="form-name" type="text" name="form-name" placeholder="Your Name" required />
+			</div>
+			</div>
+			<div class="col-md-6">
+			<div class="form-field-wrapper">
+				<input class="input-lg form-full input-fancy" id="form-email" type="email" name="form-email" placeholder="Email" required />
+			</div>
+			</div>
+			<div class="col-md-12">
+			<div class="form-field-wrapper">
+				<input class="input-lg form-full input-fancy" id="form-subject" type="text" name="form-subject" placeholder="Subject" />
+			</div>
+			</div>
+			<div class="col-md-12">
+			<div class="form-field-wrapper">
+				<textarea class="home-contact-txt-msg input-lg form-full input-fancy" id="form-message" rows="7" name="form-message" placeholder="Your Message" required></textarea>
+			</div>
+			</div>
+			<div class="col-md-12">
+			<button class="btn-contact-submit btn btn-lg btn-black" type="submit" id="form-submit" name="submit">Send Message</button>
+			</div>
+		</form>
+		</div>
+	</div>
+	<!-- End Contact form -->
+	</div>
+</section>
+<!-- End Contact Form Section -->
+<!-- Contact Infobar Section -->
+<section class="ptb-60 black-bg text-center dark-bg">
+	<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-sm-6 mb-sm-30">
+            <div class="contact-info">
+                <div class="alt-icon-top alt-icon-color"> <i class="icon-phone"></i> </div>
+                <p class="large">+1 470 480 9072</p>
+            </div>
+		</div>
+		<div class="col-md-4 col-sm-6 mb-sm-30">
+            <div class="contact-info">
+                <div class="alt-icon-top alt-icon-color"> <i class="icon-map-pin"></i> </div>
+                <p class="large"> ONLINE </p>
+            </div>
+		</div>
+		<div class="col-md-4 col-sm-6 mb-sm-30">
+		<div class="contact-info">
+			<div class="alt-icon-top alt-icon-color"> <i class="icon-envelope"></i> </div>
+			<p class="large">emmanuelmaranathayouth@gmail.com</p>
+		</div>
+		</div>
+	</div>
+	</div>
+</section>
+<!-- End Contact Infobar Section -->
 {% endblock %}
-
+<!--footer-->
 {% block footer %}
+    <!-- footer -->
     {% include "essentials/footer.html" %}
-{% endblock %}
-
-{% block js %}
-    <script src="{% static 'essentials/js/navigation.js' %}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 {% endblock %}

@@ -1,37 +1,26 @@
 {% load static %}
-<header class="header">
-  <nav class="navbar">
-    <a href="" class="nav-logo"><img src="{% static 'essentials/images/emy_logo.png' %}"></a>
-    <ul class="nav-menu">
-      {% if user.is_authenticated %}
-      <li class="nav-item">
-        <a href="{% url 'logout' %}" class="nav-link">Logout</a>
-      </li>
-      {% else %}
-      <li class="nav-item">
-        <a class="nav-link">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Committee</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Contact</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Members</a>
-      </li>
-      {% endif %}
-    </ul>
-  </nav>
-  <div class="hamburger">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </div>
+
+<!-- Header -->
+<header id="header" class="header header-dark">
+	<div class="header-inner">
+	<!-- Logo -->
+	<div class="logo"> <a href="#"> <img height="40" class="logo-light" src="{% static 'essentials/images/emy_logo.png' %}" alt="EMY-logo" /> <img class="logo-dark" src="{% static 'essentials/images/emy_logo.png' %}" alt="EMY-logo" /> </a> </div>
+	<!-- End Logo -->
+	<!-- Mobile Navbar Icon -->
+	<div class="nav-mobile nav-bar-icon"> <span></span> </div>
+	<!-- End Mobile Navbar Icon -->
+	<!-- Navbar Navigation -->
+	<div class="nav-menu singlepage-nav">
+		<ul class="nav-menu-inner">
+		<li> <a class="current" href="#intro">Home</a> </li>
+		<li> <a href="#about">About</a> </li>
+		<!--<li> <a href="#portfolio">Gallery</a> </li>-->
+		<li> <a href="#pricing">Events</a> </li>
+		<li> <a href="#contact-us">Contact</a> </li>
+		<li> <a href="#blog">Members</a> </li>
+		</ul>
+	</div>
+	<!-- End Navbar Navigation -->
+	</div>
 </header>
+<!-- End Header -->
