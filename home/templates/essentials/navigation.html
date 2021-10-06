@@ -4,7 +4,7 @@
 <header id="header" class="header header-dark">
 	<div class="header-inner">
 	<!-- Logo -->
-	<div class="logo"> <a href="#"> <img height="40" class="logo-light" src="{% static 'essentials/images/emy_logo.png' %}" alt="EMY-logo" /> <img class="logo-dark" src="{% static 'essentials/images/emy_logo.png' %}" alt="EMY-logo" /> </a> </div>
+	<!--<div class="logo"> <a href="#"> <img height="40" class="logo-light" src="{% static 'essentials/images/emy_logo.png' %}" alt="EMY-logo" /> <img class="logo-dark" src="{% static 'essentials/images/emy_logo.png' %}" alt="EMY-logo" /> </a> </div>-->
 	<!-- End Logo -->
 	<!-- Mobile Navbar Icon -->
 	<div class="nav-mobile nav-bar-icon"> <span></span> </div>
@@ -12,12 +12,18 @@
 	<!-- Navbar Navigation -->
 	<div class="nav-menu singlepage-nav">
 		<ul class="nav-menu-inner">
-		<li> <a class="current" href="#intro">Home</a> </li>
-		<li> <a href="#about">About</a> </li>
-		<!--<li> <a href="#portfolio">Gallery</a> </li>-->
-		<li> <a href="#pricing">Events</a> </li>
-		<li> <a href="#contact-us">Contact</a> </li>
-		<li> <a href="#blog">Members</a> </li>
+			{% if user.is_authenticated %}
+			<li class="">
+				<button onclick="window.location.href='{% url 'logout' %}';" type="button" class="btn btn-lg btn-white-outline mb-15">Logout </button>
+			</li>
+			{% else %}
+			<li> <a class="current" href="#intro">Home</a> </li>
+			<li> <a href="#about">About</a> </li>
+			<!--<li> <a href="#portfolio">Gallery</a> </li>-->
+			<li> <a href="#pricing">Events</a> </li>
+			<li> <a href="#member">Members</a> </li>
+			<li> <a href="#contact-us">Contact</a> </li>
+		{% endif %}
 		</ul>
 	</div>
 	<!-- End Navbar Navigation -->

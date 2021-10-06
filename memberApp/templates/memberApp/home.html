@@ -2,8 +2,6 @@
 {% load static %}
 {% load activity_tags %}
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'essentials/css/navigation.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'memberApp/css/member.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'home/css/event.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'home/css/form.css' %}">
@@ -19,6 +17,38 @@
     {% include "essentials/navigation.html" %}
 {% endblock %}
 {% block content %}
+    <!-- member login Section -->
+    <section id="" class="section-padding bg-image dark-bg pos-section overlay-dark" data-stellar-background-ratio="0.5" data-background-img="{% static 'home/images/AdobeStock_195909368.jpeg' %}">
+        <div class="container">
+        <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
+            <div class="item">
+            <div class="testimonial text-center max-width-700">
+                <div class="page-icon-sm"><i class="icon-quote"></i></div>
+                <h2>For God so loved the world, that he gave his only begotten Son, that whosoever believed in him should not perish, but have everlasting life</h2>
+                <p class="lead-lg"></p>
+                <h6 class="quote-author alt-title">John <span class="text-regular">3:16</span></h6>
+            </div>
+            </div>
+            <div class="item">
+            <div class="testimonial text-center max-width-700">
+                <div class="page-icon-sm"><i class="icon-quote"></i></div>
+                <h2>For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future.</h2>
+                <p class="lead-lg"></p>
+                <h6 class="quote-author alt-title">Jeremiah <span class="text-regular">29:11</span></h6>
+            </div>
+            </div>
+            <div class="item">
+            <div class="testimonial text-center max-width-700">
+                <div class="page-icon-sm"><i class="icon-quote"></i></div>
+                <h2>And we know that for those who love God all things work together for good, for those who are called according to his purpose.</h2>
+                <p class="lead-lg"></p>
+                <h6 class="quote-author alt-title">Romans <span class="text-regular">8:28</span></h6>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- End member login Section -->
     <main>
         <div class="social-layout">
             <div class="left-side">
