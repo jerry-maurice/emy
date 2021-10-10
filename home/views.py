@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from event.models import Event
 
 import logging
+from django.core.mail import send_mail
 
 # get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -16,3 +17,18 @@ def homeView(request):
         'events':events,
     }
     return(request, 'home/index.html', context)
+
+
+'''
+email  
+'''
+def contactForm(request):
+    if request.method == 'POST':
+        formName = request.POST['form-name']
+        formEmail = request.POST['form-email']
+        formSubject = request.POST['form-subject']
+        formMessage = request.POST['form-message']
+
+        send_mail(formSubject+' - '+formName, formMessage, formEmail, ['emmanuelmaranathayouth@gmail.com'])
+        return redirect(homeView)
+        

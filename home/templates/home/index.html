@@ -428,7 +428,8 @@
 	<div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 text-center">
-		<form id="subscribe-form" role="form" action="/" method="post" novalidate="novalidate">
+		<form id="subscribe-form" role="form" novalidate="novalidate">
+            {% csrf_token %}
 			<h2 class="mb-30">Subscribe to Our Newsletter</h2>
 			<div class="form-field-wrapper">
 			<input type="text" class="newsletter-input input-lg mb-15 subscribe-form-control" placeholder="Name" name="subscribe-name" id="subscribe-name" />
@@ -446,11 +447,12 @@
 <section id="contact-us" class="section-padding">
 	<div class="container text-center">
 	<h1>Contact Us</h1>
-	<p class="lead-lg max-width-700 mb-60">ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quia tempore rem quis iste saepe in omnis aspernatur eligendi asperiores.</p>
+	<p class="lead-lg max-width-700 mb-60">Please, connect with us today</p>
 	<!-- Contact form -->
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-		<form id="contact" class="contact-form row" role="form">
+		<form id="" class="contact-form row" role="form" method="POST" action="{% url 'contact' %}">
+            {% csrf_token %}
 			<div class="col-md-12 text-center">
 			<h5 class="successContent"> <i class="fa fa-check left" ></i>Your message has been sent successfully. </h5>
 			<h5 class="errorContent" > <i class="fa fa-exclamation-circle left"></i>There was a problem validating the form please check! </h5>
