@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from event.models import Event
 from memberApp.models import Member
 from streamapp.models import Tweet, Item, Follow
+from notification.models import Notification
 
 from stream_django.enrich import Enrich
 from stream_django.feed_manager import feed_manager
@@ -101,3 +102,23 @@ def member_registration(request):
             follow_second.save()
         return redirect(memberHome)
 
+
+# member profile
+def member_profile(request):
+    user = request.user
+    if Member.objects.filter(user=user).exists():
+        account = get_object_or_404(Member, user=user)
+        auth0user = user.social_auth.get(provider='auth0')
+        feeds = feed_manager.get_user_feed(user.id)
+        activities = feeds.get()['results']
+        enriched_activities = enricher.enrich_activities(activities)
+        notification = Notification.objects.all().order_by('-id')[:10]
+        if request.method == 'GET':
+            context = {
+                'user':user,
+                'member':account,
+                'picture':auth0user.extra_data['picture'],
+                'activities':enriched_activities,
+                'notifications':notification,
+            }
+            return render(request, 'memberApp/profile.html', context)

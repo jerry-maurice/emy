@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'navigation/navigation.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'footer/footer.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/home.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'emmanuel/css/event.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/event.css' %}">
 {% endblock %}
 {% block header %}
-    {% include "essentials/navigation.html" %}
+<!-- navigation -->
+{% include "essentials/navigation.html" %}
 {% endblock %}
 {% block content %}
 <main>
+    <div id="event-home-page" data-parallax="scroll" data-image-src="{% static 'auth0login/images/AdobeStock_392771822.jpeg' %}"></div>
     <div class="event-list">
     {% for event in events %}
         <div>
@@ -18,8 +19,15 @@
         </div>
     {% endfor %}
     </div>
+    <div class="media_section">
+        <h3><a href="{% url 'member' %}">Return Home</a></h3>
+    </div>
 </main>
 {% endblock %}
 {% block footer %}
     {% include "footer/footer.html" %}
+{% endblock %}
+{% block js%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 {% endblock %}

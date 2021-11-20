@@ -17,7 +17,7 @@
     {% include "essentials/navigation.html" %}
 {% endblock %}
 {% block content %}
-    <!-- member login Section -->
+    <!-- header Section -->
     <section id="" class="section-padding bg-image dark-bg pos-section overlay-dark" data-stellar-background-ratio="0.5" data-background-img="{% static 'home/images/AdobeStock_195909368.jpeg' %}">
         <div class="container">
         <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
@@ -48,13 +48,14 @@
         </div>
         </div>
     </section>
-    <!-- End member login Section -->
+    <!-- End header Section -->
     <main>
         <div class="social-layout">
             <div class="left-side">
                 <div class="card profile-card">
                     <img class="is-rounded" src="{{picture}}">
                     <p>{{member.about}}</p>
+                    <p><a href="{% url 'profile' %}">View your profile</a></p>
                 </div>
                 <div class="card">
                     <div class="card-header">

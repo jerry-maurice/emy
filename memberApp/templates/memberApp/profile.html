@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+{% load activity_tags %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'memberApp/css/member.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/event.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/form.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/button.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/card.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'essentials/css/footer.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'streamapp/css/tweet.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+{% block header %}
+    <!-- navigation -->
+    {% include "essentials/navigation.html" %}
+{% endblock %}
+{% block content %}
+<!-- header Section -->
+<section id="" class="section-padding bg-image dark-bg pos-section overlay-dark" data-stellar-background-ratio="0.5" data-background-img="{% static 'home/images/AdobeStock_195909368.jpeg' %}">
+    <div class="container">
+    <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
+        <div class="item">
+        <div class="testimonial text-center max-width-700">
+            <div class="page-icon-sm"><i class="icon-quote"></i></div>
+            <h2>For God so loved the world, that he gave his only begotten Son, that whosoever believed in him should not perish, but have everlasting life</h2>
+            <p class="lead-lg"></p>
+            <h6 class="quote-author alt-title">John <span class="text-regular">3:16</span></h6>
+        </div>
+        </div>
+        <div class="item">
+        <div class="testimonial text-center max-width-700">
+            <div class="page-icon-sm"><i class="icon-quote"></i></div>
+            <h2>For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future.</h2>
+            <p class="lead-lg"></p>
+            <h6 class="quote-author alt-title">Jeremiah <span class="text-regular">29:11</span></h6>
+        </div>
+        </div>
+        <div class="item">
+        <div class="testimonial text-center max-width-700">
+            <div class="page-icon-sm"><i class="icon-quote"></i></div>
+            <h2>And we know that for those who love God all things work together for good, for those who are called according to his purpose.</h2>
+            <p class="lead-lg"></p>
+            <h6 class="quote-author alt-title">Romans <span class="text-regular">8:28</span></h6>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- End header Section -->
+<main>
+    <div class="social-layout">
+        <div class="left-side">
+            <div class="card profile-card">
+                <img class="is-rounded" src="{{picture}}">
+            </div>
+            <div class="card">
+                {% include "navigation/vertical_navigation.html" %}
+            </div>
+            {% include "emmanuel/discovery_side.html" %}
+        </div>
+        <div class="center-side">
+            <div class="card">
+                <div class="card-header">
+                    {{member.user.first_name}} {{member.user.last_name}}
+                </div>
+                <div class="card-body">
+                    <p>{{member.about}}</p>
+                </div>
+            </div>
+            <div class="">
+                {% for activity in activities %}
+                    {% render_activity activity %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="notification_section">
+                {% include 'notification/notification.html' %}
+            </div>
+        </div>
+    </di>
+</main>
+{% endblock %}
+{% block footer %}
+{% endblock %}
+{% block js%}
+<script src="{% static 'essentials/js/navigation.js' %}"></script>
+<script src="{% static 'memberApp/js/social.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+{% endblock %}

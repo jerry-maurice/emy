@@ -4,4 +4,5 @@ from memberApp import views
 urlpatterns = [
     path('home/', views.memberHome, name='member'),
     path('registration/', views.member_registration, name='memberRegistration'),
+    path('profile/', views.member_profile, name='profile'),
 ]
