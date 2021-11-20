@@ -32,38 +32,32 @@
                     <form action="{% url 'memberRegistration' %}" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="field">
-                            <label class="label">First Name</label>
+                            <label class="">First Name</label>
                             <div class="control">
                                 <input required class="input" type="text" name="firstName" placeholder="Enter First Name">
                             </div>
                         </div>
                         <div class="field">
-                            <label class="label">Last Name</label>
+                            <label class="">Last Name</label>
                             <div class="control">
                                 <input required class="input" name="lastName" type="text" placeholder="Enter Last Name">
                             </div>
                         </div>
                         <div class="field">
-                            <label class="label">Date of Birth</label>
+                            <label class="">Date of Birth</label>
                             <div class="control">
-                                <input required class="input datetime-picker" name="dateOfBirth" type="date" placeholder="Email input">
+                                <input required class="input datetime-picker" name="dateOfBirth" type="date" placeholder="Date of Birth">
                             </div>
                         </div>
                         <div class="field">
-                            <label class="label">Phone Number</label>
+                            <label class="">Phone Number</label>
                             <div class="control">
                                 <input required class="input" name="memberNumber" type="tel" placeholder="Enter Phone Number">
                             </div>
                         </div>
-                        <div class="field">
-                            <label class="label">Picture</label>
-                            <div class="control">
-                                <input class="input" name="memberPicture" type="file" placeholder="Upload File">
-                            </div>
-                        </div>
                             
                         <div class="field">
-                            <label class="label">Message</label>
+                            <label class="">About you</label>
                             <div class="control">
                                 <textarea required class="textarea" name="memberAbout" placeholder="Tell us about you"></textarea>
                             </div>

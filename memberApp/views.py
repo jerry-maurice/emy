@@ -25,6 +25,7 @@ def memberHome(request):
         if Member.objects.filter(user=user).exists():
             account = get_object_or_404(Member, user=user)
             feeds = feed_manager.get_news_feeds(user.id)
+            auth0user = user.social_auth.get(provider='auth0')
             #notification_feeds = feed_manager.get_notification_feed(user.id)
             #logger.info(notification_feeds.get('notification').get()['results'])
             activities = feeds.get('timeline').get()['results']
@@ -34,7 +35,8 @@ def memberHome(request):
                 'activities':enriched_activities,
                 'member':account,
                 'events':Event.objects.all().filter(isActive=True),
-                'members':Member.objects.all()
+                'members':Member.objects.all(),
+                'picture':auth0user.extra_data['picture'],
             }
             return render(request, 'memberApp/home.html',context)
         else:
@@ -88,11 +90,12 @@ def member_registration(request):
             member = Member(user=user, dateofbirth=dob, phone=phoneNumber, about=about)
             member.save()
         # follow self 
-        follow = Follow(user=user, target=user)
-        follow.save()
+        if Follow.objects.filter(user=user, target=user).exists() == False:
+            follow = Follow(user=user, target=user)
+            follow.save()
         # follow main user
-        '''if User.objects.get(email='emmanuelmaranathayouth@gmail.com').exists():
+        if User.objects.filter(email='emmanuelmaranathayouth@gmail.com').exists() == False:
             follow_priority = Follow(user=user,target=get_object_or_404(User,email='emmanuelmaranathayouth@gmail.com'))
-            follow_priority.save()'''
+            follow_priority.save()
         return redirect(memberHome)
 
