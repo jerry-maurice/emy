@@ -94,8 +94,10 @@ def member_registration(request):
             follow = Follow(user=user, target=user)
             follow.save()
         # follow main user
-        if User.objects.filter(email='emmanuelmaranathayouth@gmail.com').exists() == False:
+        if User.objects.filter(email='emmanuelmaranathayouth@gmail.com').exists():
             follow_priority = Follow(user=user,target=get_object_or_404(User,email='emmanuelmaranathayouth@gmail.com'))
             follow_priority.save()
+            follow_second = Follow(target=user,user=get_object_or_404(User,email='emmanuelmaranathayouth@gmail.com'))
+            follow_second.save()
         return redirect(memberHome)
 
